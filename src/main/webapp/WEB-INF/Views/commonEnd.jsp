@@ -1,6 +1,5 @@
-
-    </main>
-<!-- End #main -->	
+</main>
+<!-- End #main -->
 </body>
-<%@include file="scriptFile.jsp" %>
+<%@include file="scriptFile.jsp"%>
 </html>
