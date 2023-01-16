@@ -39,4 +39,9 @@ public class ResourceController {
 	public String resetPassword() {
 		return "resetPassword";
 	}
+	@GetMapping("/manageEmployee")
+	public String manageEmployee() {
+		return "ManageEmployee" ;
+	}
+	
 }

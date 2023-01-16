@@ -12,8 +12,10 @@
 <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
 <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/DP/DP.css" media="all" />
 <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
+<link rel="stylesheet" href="assets/vendor/jquery/jquery-ui.min.js" media="all" />
+<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
