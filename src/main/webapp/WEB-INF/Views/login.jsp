@@ -50,7 +50,7 @@
 										</div>
 										<div class="col-12">
 											<p class="small mb-0 d-flex justify-content-between">
-												<a href="#" class="text-decoration-underline fw-bold fs-6">Register Your Company</a>
+												<a href="registration" class="text-decoration-underline fw-bold fs-6">Register Your Company</a>
 												<a href="forgotPassword" class="text-decoration-underline fw-bold fs-6">Forget Password</a>
 											</p>
 										</div>

@@ -4,13 +4,13 @@
 	let currentTab = 0;
 	showTab(currentTab);
 
-	function showTab(n) {
+function showTab(n) {
 		let x = $(".tab");		
 		$(x[n]).show();
 		if (n == 0) {
-		$("#prevBtn").css("display","none");
+		$("#prevBtn").css("visibility","hidden");
 		} else {
-			$("#prevBtn").css("display","inline");
+			$("#prevBtn").css("visibility","visible");
 		}
 		if (n == (x.length - 1)) {
 			$("#nextBtn").html("Submit");
@@ -19,7 +19,6 @@
 		}
 		fixStepIndicator(n)
 	}
-
 	
 	//Function to change the tabs based on 
 	function nextPrev(n) {

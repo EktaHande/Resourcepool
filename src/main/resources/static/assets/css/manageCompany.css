@@ -1,0 +1,67 @@
+
+/* Hide all steps by default: */
+.tab {
+	display: none;
+}
+
+.custome-h {
+	height: 400px;
+}
+
+.wizard-step-highlight {
+	border-left: 5px solid green;
+	border-radius: 5px
+}
+
+.wizard-icon {
+	position: absolute;
+	top: -5px;
+}
+
+.row {
+	margin-left: 20%
+}
+
+label.error {
+	color: red;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+	position: relative;
+	height: 15px;
+	width: 15px;
+	background-color: #bbbbbb;
+	border: none;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: inline-block;
+	opacity: 0.5;
+}
+
+.step.active {
+	background-color: green;
+	opacity: 1;
+}
+
+/*Mark the steps that are finished and valid: */
+.step.finish {
+	background-color: #04AA6D;
+}
+
+
+ @media (max-width: 390px) {
+  :root {
+    font-size: 10px;
+  }
+  .custome-h{
+  height: 200px;
+  }
+  #formDiv{
+  margin-top:50px;
+  }
+  
+}
+
+
+
