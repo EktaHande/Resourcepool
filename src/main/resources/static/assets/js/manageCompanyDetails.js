@@ -36,11 +36,7 @@
 
 	// This function is being used to check file size 
 	$.validator.addMethod("checkFileSize", function(value,element, args) {
-		if (element.files[0].size < args) {
-			return true
-		} else {
-			return false
-		}
+		return element.files[0].size < args;
 
 	}, "Please select appropriate file size");
 

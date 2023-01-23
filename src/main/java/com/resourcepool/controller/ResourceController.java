@@ -3,7 +3,6 @@ package com.resourcepool.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ResourceController {
@@ -46,18 +45,19 @@ public class ResourceController {
 	public String resetPassword() {
 		return "resetPassword";
 	}
-	@GetMapping("/manageEmployee")
+	
+	@GetMapping("manageEmployee")
 	public String manageEmployee() {
 		return "ManageEmployee" ;
 
 	}
 	
-	@RequestMapping("manageCompanyDetails")
+	@GetMapping("manageCompanyDetails")
 	public String manageCompanyDetails() {
 		return "manageCompanyDetails";
 	}
 	
-	@RequestMapping("/registration")
+	@GetMapping("/registration")
 	public String registration() {
 		return "Registration";
 	}

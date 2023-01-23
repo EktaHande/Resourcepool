@@ -12,10 +12,12 @@
 <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
 <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/DP/DP.css" media="all" />
 <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/vendor/jquery/jquery-ui.min.js" media="all" />
-<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
+<link href="assets/vendor/jquery-ui-1.13.2/jquery-ui.css" rel="stylesheet">
+<link href="assets/vendor/datatable/datatables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/select2.min.css" />
+
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />

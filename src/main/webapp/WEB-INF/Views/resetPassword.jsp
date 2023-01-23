@@ -28,7 +28,7 @@
 											<div class="mt-2">
 												<label for="password">
 													Enter Password
-													<span class="text-danger">*</span>
+													<sup class="text-danger">*</sup>
 												</label>
 												<div class="col-12">
 													<input type="text" name="password" class="form-control" id="password" placeholder="Enter Your Password">
@@ -38,7 +38,7 @@
 											<div class="mt-3">
 												<label for="confirmPassword">
 													Confirm Password
-													<span class="text-danger">*</span>
+													<sup class="text-danger">*</sup>
 												</label>
 												<div class="col-12">
 													<input type="text" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Enter Your Password again">

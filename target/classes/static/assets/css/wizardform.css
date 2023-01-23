@@ -41,3 +41,43 @@
 .step.finish {
 	background-color: #04AA6D;
 }
+/*Datepicker css */
+.datePickForStartDate .ui-datepicker-calendar {
+	display: none;
+}
+
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary {
+    opacity: 1 !important;
+    font-weight: bold !important;
+}
+
+.ui-datepicker-trigger {
+	height: 25px;
+	width: 24px;
+	position: absolute;
+	right: 20px;
+}
+.ui-widget-header {
+	background: #a9b4ea;
+}
+.addBorder{
+	background-color: #d6d5d2;
+	box-shadow: 0 0 5px 1px rgb(94, 158, 214);
+}
+.removeBorder{
+	box-shadow: none;
+}
+.ui-visual-focus {
+    box-shadow: none !important;
+    color: #012970 !important;
+    font-weight: 500 !important;
+}
+.select2-selection--multiple:before {
+    content: "";
+    position: absolute; 
+    right: 7px;
+    top: 42%;
+    border-top: 5px solid #888;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}

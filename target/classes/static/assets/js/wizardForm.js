@@ -143,9 +143,9 @@ function showTab(n) {
 				minlength : 10 ,
 				validateMobile : true ,
 			},
-			test : {
-				required : true ,
-			}
+			languages : {
+				validateLanguage : true ,
+			},
 		},
 		messages:{
 			employeeFirstName: {

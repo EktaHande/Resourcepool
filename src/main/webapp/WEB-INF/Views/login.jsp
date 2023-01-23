@@ -22,7 +22,7 @@
 										<div class="col-12">
 											<label for="email" class="form-label">
 												Your Email
-												<span class="text-danger">*</span>
+												<sup class="text-danger">*</sup>
 											</label>
 											<div class="input-group ">
 												<span class="input-group-text" id="inputGroupPrepend">
@@ -35,7 +35,7 @@
 										<div class="col-12">
 											<label for="password" class="form-label">
 												Your Password
-												<span class="text-danger">*</span>
+												<sup class="text-danger">*</sup>
 											</label>
 											<div class="input-group">
 												<span class="input-group-text" id="inputGroupPrepend">
