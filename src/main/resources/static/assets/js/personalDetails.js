@@ -60,7 +60,15 @@ $("#regEmployeeForm").validate({
 			checkFileSize: 2097152,
 		},
 		languages: {
-			validateLanguage: true,
+			required: function() {
+				return $("#languages") !== "";
+			},
+			duplicateLanguage: true,
+		},
+		languagesProficiency: {
+			required: function() {
+				return $("#languagesProficiency") !== "";
+			},
 		},
 
 	},
@@ -114,7 +122,13 @@ $("#regEmployeeForm").validate({
 			required: "Please upload the resume ",
 			extension: "Select pdf file only in for resume",
 			checkFileSize: "File Size should not exceed the limit of 2 mb ",
-		}
+		},
+		languages: {
+			required: "Please select languages",
+		},
+		languagesProficiency: {
+			required: "Please select language proficiency",
+		},
 	}
 })
 

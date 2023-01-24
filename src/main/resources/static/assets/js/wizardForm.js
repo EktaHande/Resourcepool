@@ -4,11 +4,10 @@
 
 $('b[role="presentation"]').hide();
 
-$(document).on("keypress" , ".no-e" , function(evt){
-	 if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57)
-    {
-        evt.preventDefault();
-    }
+$(document).on("keypress", ".no-e", function(evt) {
+	if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57) {
+		evt.preventDefault();
+	}
 })
 
 
@@ -36,36 +35,31 @@ function showTab(n) {
 //Function to change the tabs based on 
 function nextPrev(n) {
 	let x = $(".tab");
-
-	console.log(x.length);
 	if (n == 1 && !validateForm())
 		return false;
 	$(x[currentTab]).hide();
 	if (currentTab == x.length - 1) {
-		console.log("reached final tab") ;
-		if($("#manageCompanyDetails").length){
-			if($("#manageCompanyDetails").valid()){
+		if ($("#manageCompanyDetails").length) {
+			if ($("#manageCompanyDetails").valid()) {
 				ajaxCall();
 			}
-		}else if($("#regEmployeeForm").length){
-			if($("#regEmployeeForm").valid()){
-				ajaxCallOnSubmitOfPersonalDetails() ;
+		} else if ($("#regEmployeeForm").length) {
+			if ($("#regEmployeeForm").valid()) {
+				ajaxCallOnSubmitOfPersonalDetails();
 			}
 		}
 		return false;
 	}
 	currentTab = currentTab + n;
-	console.log(currentTab);
 	showTab(currentTab);
 }
 
-function prev(n){
+function prev(n) {
 	let x = $(".tab");
 	$(x[currentTab]).hide();
 	currentTab = currentTab + n;
- 	console.log("Tab from prev "+ currentTab)
 	showTab(currentTab);
-	
+
 }
 
 function validateForm() {
@@ -90,15 +84,15 @@ function validateForm() {
 	}
 	//validates all the dropdown inside the current tab 
 	for (i = 0; i < selectElements.length; i++) {
-		
+
 		valid = $(selectElements[i]).valid();
 		if (!valid) {
 			validBoolean = false
 		}
 	}
 	if (!validBoolean) return false;
-	
-	
+
+
 
 	if (valid) {
 		let steps;
@@ -140,7 +134,7 @@ $(document).on("keyup change clear keydown", "#employeeDOB", function() {
 })
 
 
-$("input[type=file]").on("change" ,function(){
+$("input[type=file]").on("change", function() {
 	$(this).valid();
 })
 

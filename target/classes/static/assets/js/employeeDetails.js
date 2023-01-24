@@ -1,19 +1,15 @@
-$(".languagesProficiencyDiv").hide();
-$(".addLanguages").hide();
 let employeeDetail = [];
+let expertiseLevel;
+let languageObject = [];
+
 $(".expertiseLevel").checkboxradio({
 	icon: false
 });
 
-$("#languages").on("change", function() {
-	$(this).valid();
-})
-
-let expertiseLevel;
 
 $(document).on("click", ".closeModal", function() {
-	$("#prefferedLocation").val("");
-	$('#prefferedLocation').trigger('change');
+	$("#prefferedLocation, #currentLocation, #industryType, #currentDesignation").val("");
+	$("#prefferedLocation, #currentLocation, #industryType, #currentDesignation").trigger('change');
 	$(".addEmployeeModal .error").text("");
 });
 
@@ -25,48 +21,101 @@ $(document).on("click", ".expertCard", function() {
 	expertiseLevel = $(this).children().find("input").val();
 })
 $("#prefferedLocation").select2({
-	dropdownParent: $("#ExtralargeModal"),
-	placeholder: "Please select Preffered location",
+	dropdownParent: $("#AddEmploymentModel"),
+	dropdownAutoWidth: true,
+	multiple: true,
+	placeholder: "Please select preffered location",
+	allowClear: true
 });
-$(document).on("change", "#languages", function() {
-	$(".languagesProficiencyDiv").show();
-});
-$(document).on("change", "#languagesProficiency", function() {
-	$(".addLanguages").show();
-});
+let allLanguage = [];
 
-let allLanguage = [] ; 
-
-$(document).on("click", ".addLanguages", function() {
-	let languagesObject = {
-		languages: $("#languages").val(),
-		languagesProficiency: $("#languagesProficiency").val(),
-	}
-	let isExists = true;
-	for (const languageItems of languages) {
-		if (languageItems.languages === languagesObject.languages) {
-			isExists = false;
-			break;
-		}
-	}
-	if (isExists) {
-		allLanguage.push(languagesObject);
-	}
-	$("#languages").val("");
-	$('#languages').trigger('change');
-	$("#languagesProficiency").val("");
-	$('#languagesProficiency').trigger('change');
-	$(".languagesProficiencyDiv").hide();
-	$(".addLanguages").hide();
+$(document).on("click", ".deleteYourLanguages", function() {
+	$(this).parents(".deleteLanguageTab").remove();
 })
 
+const languageTab = `<div class="deleteLanguageTab deleteTab">
+										<div class="row m-0 p-0">
+											<div class="d-flex col-12 col-md-5 my-2 ">
+												<label for="languages" class="col-4 my-auto">Languages<sup class="text-danger">*</sup></label>
+												<div class="col-8 d-flex flex-wrap align-items-center">
+													<select class="form-select languages" id="languages"  name="languages" style="width: 100%">
+														<option></option>
+														<option value="English">English</option>
+														<option value="Hindi">Hindi</option>
+														<option value="Marathi">Marathi</option>
+														<option value="Telugu">Telugu</option>
+													</select> 
+													<label id="languages-error" class="error text-danger" for="languages"></label>
+												</div>
+											</div>
+											<div class="d-flex col-12 col-md-5 my-2">
+												<label for="languagesProficiency" class="col-4 my-auto">Languages Proficiency<sup class="text-danger">*</sup></label>
+												<div class="col-8 d-flex flex-wrap align-items-center">
+													<select class="form-select languagesProficiency" id="languagesProficiency" name="languagesProficiency" style="width: 100%">
+														<option></option>
+														<option value="basic">Basic</option>
+														<option value="conversational">Conversational</option>
+														<option value="fluent">Fluent</option>
+														<option value="native">Native or Billingual</option>
+													</select> <label id="languagesProficiency-error" class="error text-danger" for="languagesProficiency"></label>
+												</div>
+											</div>
+											<div class="row m-0 p-0 col-md-2">
+												<div class="col-md-6 my-3">
+													<em class="ri-delete-bin-5-line fs-5 deleteYourLanguages"></em>
+												</div>
+											</div>
+										</div>
+									</div>`
 
-$("#languagesProficiency").select2({
-	placeholder: "Please select languages proficiency",
-	text: '',
-});
-$("#languages").select2({
-	placeholder: "Please select languages",
+$(document).on("click", ".addLanguages", function() {
+	if (isEmpty($('.languagesTab'))) {
+		$(".languagesTab").append(languageTab);
+	}
+	if ($(".languages").valid() && $(".languagesProficiency").valid()) {
+		$("#languages-error").remove();
+		$("#languagesProficiency-error").remove();
+		$(".languages").attr("disabled", true);
+		$(".languagesProficiency").attr("disabled", true);
+		$(document).ready(function() {
+			$(".languages").valid();
+			$(".languagesProficiency").valid()
+			$(".languagesTab").append(languageTab);
+		})
+	}
+})
+function isEmpty(el) {
+	return !$.trim(el.html())
+}
+
+$(document).on("click", ".savelangbutton", function() {
+	if ($(".languages").valid() && $(".languagesProficiency").valid()) {
+		saveLanguageObject();
+	}
+})
+function saveLanguageObject() {
+	let languageDetail = $(".languages");
+	let languageProficiencyDetail = $(".languagesProficiency");
+	const language = [];
+	const languageProf = [];
+	for (let items of languageDetail) {
+		language.push(items.value);
+	}
+	for (let items of languageProficiencyDetail) {
+		languageProf.push(items.value)
+	}
+	languageObject = language.map((item, index) => {
+		return {
+			language: item,
+			languageProficiency: languageProf[index]
+		}
+	})
+}
+
+
+$("#currentLocation, #industryType, #currentDesignation").select2({
+	dropdownParent: $("#AddEmploymentModel"),
+	dropdownAutoWidth: true,
 	text: '',
 });
 
@@ -110,8 +159,12 @@ $(document).ready(function() {
 		},
 		showButtonPanel: true,
 	});
-	;
+
 	$(document).on("click", ".saveEmployeeDetails", function() {
+		let currentlyWorking = "No";
+		if ($('#currentlyWorking').is(':checked')) {
+			currentlyWorking = "Yes";
+		}
 		let employeeDetails = {
 			"CompanyName": $("#companyName").val(),
 			"CurrentLocation": $("#currentLocation").val(),
@@ -124,13 +177,12 @@ $(document).ready(function() {
 			"StartDate": $("#startDate").val(),
 			"EndDate": $("#endDate").val(),
 			"Description": $("#description").val(),
-			"CurrentlyWorking": $("#currentlyWorking").val()
+			"CurrentlyWorking": currentlyWorking,
+			"ProfilePhoto": $("#profilePhoto").val()
 		}
 		if ($("#addEmployeeDetailForm").valid()) {
 			$(".closeModal").click();
 			employeeDetail.push(employeeDetails);
-			$("#prefferedLocation").val("");
-			$('#prefferedLocation').trigger('change');
 			addingEmployment();
 		}
 	})
@@ -165,7 +217,7 @@ function addingEmployment() {
             <td>${element['StartDate']}</td>
             <td>${element['PrefferedLocation']}</td>
             <td>${element['CurrentlyWorking']}</td>]
-			<td><button class="btn btn-outline-danger delete-employment">delete</button><button class="btn btn-outline-success">Edit</button></td>
+			<td><button class="btn btn-outline-danger delete-employment">Delete</button><button class="btn btn-outline-success">Edit</button></td>
 		 </tr>
 		 `);
 	});
@@ -173,6 +225,11 @@ function addingEmployment() {
 $(document).on("click", ".delete-employment", function() {
 	employeeDetail.splice($(this).parent().parent().attr("id"), 1);
 	addingEmployment();
+	if (employeeDetail.length === 0) {
+		$(".table-responsive").hide();
+	} else {
+		$(".table-responsive").show();
+	}
 })
 
 $("#addEmployeeDetailForm").validate({
@@ -202,7 +259,7 @@ $("#addEmployeeDetailForm").validate({
 			validateCompanyName: true,
 		},
 		currentDesignation: {
-			validateName: true,
+			required: true,
 		},
 		other: {
 			maxlength: 45,
@@ -243,6 +300,9 @@ $("#addEmployeeDetailForm").validate({
 		},
 		other: {
 			maxlength: "Maximum 45 character is allowed",
+		},
+		currentDesignation: {
+			required: "Current designation is required",
 		},
 		description: {
 			maxlength: "Maximum 45 character is allowed",

@@ -1,17 +1,4 @@
 <%@include file="commonUpper.jsp"%>
-
-<style>
-
-.select2-selection--multiple:before {
-	content :none !important; 
-	position: absolute;
-    right: 7px;
-    top: 42%;
-    border-top: 5px solid #888;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-}
-</style>
 <main class="main">
 	<div class="">
 		<div class="card-body">
@@ -43,8 +30,8 @@
 										<div class="d-flex flex-wrap col-12 mb-3">
 											<label for="employeeEmail" class="col-12 col-md-3 my-auto">Email-Id<sup>*</sup></label>
 											<div class="col-12 col-md-6">
-												<input type="text" name="employeeEmail" id="employeeEmail" class="form-control col-12" placeholder="Email-Id" /> <label for="employeeEmail"
-													class="text-danger error"></label>
+												<input type="text" name="employeeEmail" id="employeeEmail" class="form-control col-12" placeholder="Email-Id" /> <label
+													for="employeeEmail" class="text-danger error"></label>
 											</div>
 										</div>
 										<div class="d-flex flex-wrap  col-12 mb-3">
@@ -70,7 +57,7 @@
 								<strong>Employment</strong>
 							</h4>
 							<hr />
-							<button type="button" class="btn btn-primary m-4 addEmploymentButton" data-bs-toggle="modal" data-bs-target="#ExtralargeModal">
+							<button type="button" class="btn btn-primary m-4 addEmploymentButton" data-bs-toggle="modal" data-bs-target="#AddEmploymentModel">
 								<span class="mx-2 fs-5 fw-bold">+</span> Add Employment Detail
 							</button>
 							<div class="employmentTable"></div>
@@ -94,30 +81,28 @@
 								<hr />
 								<div class="d-flex gap-3 flex-wrap flex-column align-items-center expertiseLevelBigDiv">
 									<div class="container col-12 col-md-5">
-										<div class="card-body rounded-3 border expertCard text-wrap" style="background-color: #d6d5d2;">
+										<div class="card-body rounded-3 border expertCard text-wrap">
 											<div class="d-flex justify-content-center">
-												<input type="radio" value="entrylevel" id="entrylevel" name="expertiseLevel" class="m-2 expertiseLevel" style="width: 20px; height: 20px" />
-												<label for="entrylevel" class="card-title m-0 text-center p-0 border-0" style="background-color: #d6d5d2;">Entry Level</label>
+												<input type="radio" value="entrylevel" id="entrylevel" name="expertiseLevel" class="m-2 expertiseLevel" /> <label for="entrylevel"
+													class="card-title m-0 text-center p-0 border-0">Entry Level</label>
 											</div>
 											<p class="card-text text-center mt-2">I am relatively new to this field</p>
 										</div>
 									</div>
 									<div class="container col-12 col-md-5">
-										<div class="card-body rounded-3 border expertCard text-wrap" style="background-color: #d6d5d2;">
+										<div class="card-body rounded-3 border expertCard text-wrap">
 											<div class="d-flex justify-content-center">
-												<input type="radio" value="intermediateLevel" id="intermediateLevel" name="expertiseLevel" class="m-2 expertiseLevel"
-													style="width: 20px; height: 20px" /> <label for="intermediateLevel" class="card-title m-0 text-center p-0 border-0"
-													style="background-color: #d6d5d2;">Intermediate</label>
+												<input type="radio" value="intermediateLevel" id="intermediateLevel" name="expertiseLevel" class="m-2 expertiseLevel" /> <label
+													for="intermediateLevel" class="card-title m-0 text-center p-0 border-0">Intermediate</label>
 											</div>
 											<p class="card-text text-center mt-2">I have substantial experience in this field</p>
 										</div>
 									</div>
 									<div class="container col-12 col-md-5">
-										<div class="card-body rounded-3 border expertCard text-wrap" style="background-color: #d6d5d2;">
+										<div class="card-body rounded-3 border expertCard text-wrap">
 											<div class="d-flex justify-content-center">
-												<input type="radio" value="expertLevel" id="expertLevel" name="expertiseLevel" class="m-2 expertiseLevel"
-													style="width: 20px; height: 20px" /> <label for="expertLevel" class="card-title m-0 text-center p-0 border-0"
-													style="background-color: #d6d5d2;">Expert</label>
+												<input type="radio" value="expertLevel" id="expertLevel" name="expertiseLevel" class="m-2 expertiseLevel" /> <label for="expertLevel"
+													class="card-title m-0 text-center p-0 border-0">Expert</label>
 											</div>
 											<p class="card-text text-center mt-2">I have comprehensive and deep expertise in this field</p>
 										</div>
@@ -131,40 +116,47 @@
 									<strong>Languages</strong>
 								</h4>
 								<hr />
-								<div class="row m-0 p-o flex-wrap justify-content-center">
-
-									<div class="d-flex col-12 col-md-6 mb-3">
-										<label for="languages" class="col-4 my-auto">Languages<sup class="text-danger">*</sup></label>
-										<div class="col-8 d-flex flex-wrap align-items-center">
-											<select class="form-select" id="languages" name="languages" style="width: 100%">
-												<option value="">Please Select Language</option>
-												<option value="English">English</option>
-												<option value="Hindi">Hindi</option>
-												<option value="Marathi">Marathi</option>
-												<option value="Telugu">Telugu</option>
-											</select> <label id="languages-error" class="error text-danger" for="languages"></label>
-										</div>
-									</div>
-									<div class="languagesProficiencyDiv row m-0 p-0 flex-wrap justify-content-center">
-										<div class="d-flex col-12 col-md-6 mb-3 ">
-											<label for="languagesProficiency" class="col-4 my-auto">Languages Proficiency<sup class="text-danger">*</sup></label>
-											<div class="col-8 d-flex flex-wrap align-items-center">
-												<select class="form-select" id="languagesProficiency" name="languagesProficiency" style="width: 100%">
-													<option value="">Select Language Proficiency</option>
-													<option value="basic">Basic</option>
-													<option value="conversational">Conversational</option>
-													<option value="fluent">Fluent</option>
-													<option value="native"><h3>Native or Billingual
-													</option>
-												</select> <label id="languagesProficiency-error" class="error text-danger" for="languages"></label>
+								<div class="languagesTab">
+									<div class="deleteLanguageTab deleteTab">
+										<div class="row m-0 p-0">
+											<div class="d-flex col-12 col-md-5 my-2 ">
+												<label for="languages" class="col-4 my-auto"> Languages <sup class="text-danger">*</sup>
+												</label>
+												<div class="col-8 d-flex flex-wrap align-items-center">
+													<select class="form-select languages" id="languages" name="languages" style="width: 100%">
+														<option></option>
+														<option value="English">English</option>
+														<option value="Hindi">Hindi</option>
+														<option value="Marathi">Marathi</option>
+														<option value="Telugu">Telugu</option>
+													</select> <label id="languages-error" class="error text-danger" for="languages"></label>
+												</div>
+											</div>
+											<div class="d-flex col-12 col-md-5 my-2">
+												<label for="languagesProficiency" class="col-4 my-auto"> Languages Proficiency <sup class="text-danger">*</sup>
+												</label>
+												<div class="col-8 d-flex flex-wrap align-items-center">
+													<select class="form-select languagesProficiency" id="languagesProficiency" name="languagesProficiency" style="width: 100%">
+														<option></option>
+														<option value="basic">Basic</option>
+														<option value="conversational">Conversational</option>
+														<option value="fluent">Fluent</option>
+														<option value="native">Native or Billingual</option>
+													</select> <label id="languagesProficiency-error" class="error text-danger" for="languagesProficiency"></label>
+												</div>
+											</div>
+											<div class="row m-0 p-0 col-md-2">
+												<div class="col-md-6 my-3">
+													<em class="ri-delete-bin-5-line fs-5 deleteYourLanguages"></em>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="d-flex justify-content-center w-75">
-										<button type="button" class="btn btn-primary m-2 addLanguages">
-											<span class="mx-2 fs-5 fw-bold">+</span> Add Language
-										</button>
-									</div>
+								</div>
+								<div class="d-flex">
+									<button type="button" class="btn btn-primary m-2 addLanguages">
+										<span class="mx-2 fs-5 fw-bold">+</span> Add Language
+									</button>
 								</div>
 							</div>
 						</div>
@@ -187,8 +179,8 @@
 								<hr class="text-secondary" />
 								<div class="d-flex ">
 									<div class="col-9 d-flex flex-column">
-										<label for="serviceFee">Company Service Fee<sup>*</sup></label> <strong class="text-secodary">The service fee is % when you begin a contract
-											with new client</strong>
+										<label for="serviceFee">Company Service Fee<sup>*</sup></label> <strong class="text-secodary">The service fee is % when you begin a
+											contract with new client</strong>
 									</div>
 									<div class="col-3 d-flex">
 										<input type="number" name="serviceFee" id="serviceFee" class="form-control no-e" placeholder="0.0" /> <label for="serviceFee"
@@ -227,20 +219,16 @@
 										<div class="row mb-3">
 											<label for="employeeskill" class="col-sm-3 col-form-label">Skills<sup>*</sup></label>
 											<div class="col-sm-6">
-												<select class="form-select" name="employeeskill" style="width: 100% !important;" id="employeeskill"
-													multiple="multiple">
+												<select class="form-select" name="employeeskill" style="width: 100% !important;" id="employeeskill" multiple="multiple">
 													<option value="java">java</option>
 													<option value="pyhton">python</option>
 													<option value="c#">C#</option>
 													<option value="Ajax">Ajax</option>
 													<option value="asp.net">Asp.net</option>
-												</select>
-												<label for="employeeskill" class="error text-danger"></label>
+												</select> <label for="employeeskill" class="error text-danger"></label>
 												<div>
 													<label for="" class="fw-bold text-secondary mt-2">Selected Skills</label>
-													<div class="col-sm-12 foo my-3" style="border:none;">
-													
-													</div>
+													<div class="col-sm-12 foo my-3" style="border: none;"></div>
 												</div>
 											</div>
 										</div>
@@ -257,7 +245,7 @@
 						</div>
 						<div style="overflow: auto;">
 							<div class="d-flex justify-content-between">
-								<button type="button" class="btn btn-outline-dark" id="prevBtn" onclick="prev(-1)">Previous</button>
+								<button type="button" class="btn btn-outline-dark" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
 								<button type="button" class="btn btn-outline-primary next" id="nextBtn" onclick="nextPrev(1)">Next</button>
 							</div>
 						</div>
@@ -301,8 +289,10 @@
 					</div>
 				</div>
 			</form>
-			<!--Modal for collecting data of employment details -->
-			<div class="modal fade" id="ExtralargeModal" tabindex="-1" style="display: none;" aria-hidden="true">
+
+			<!-- 			Modal for collecting data of employment details -->
+			<div class="modal fade" id="AddEmploymentModel" tabindex="-1" aria-hidden="true">
+
 				<form action="" id="addEmployeeDetailForm">
 					<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
 						<div class="modal-content ">
@@ -328,7 +318,7 @@
 											<label for="currentLocation" class="col-4 my-auto"> Current Location <sup class="text-danger">*</sup>
 											</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<select class="form-select" id="currentLocation" name="currentLocation" aria-label="Default select example">
+												<select class="form-select" id="currentLocation" name="currentLocation" aria-label="Default select example" style="width: 100%">
 													<option value="">Select your current location</option>
 													<option value="mumbai">Mumbai</option>
 													<option value="thane">Thane</option>
@@ -365,7 +355,7 @@
 											<label for="industryType" class="col-4 my-auto"> Industry Type <sup class="text-danger">*</sup>
 											</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<select class="form-select" id="industryType" name="industryType" aria-label="Default select example">
+												<select class="form-select" id="industryType" name="industryType" style="width: 100%" aria-label="Default select example">
 													<option value="">Select industry type</option>
 													<option value="InformationTechnology">Information Technology(IT)</option>
 													<option value="Manufacturing">Manufacturing</option>
@@ -388,7 +378,7 @@
 											<label for="currentDesignation" class="col-4 my-auto"> Current Designation <sup class="text-danger">*</sup>
 											</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<select class="form-select" id="currentDesignation" name="currentDesignation" aria-label="Default select example">
+												<select class="form-select" id="currentDesignation" name="currentDesignation" style="width: 100%" aria-label="Default select example">
 													<option value="">Select your current designation</option>
 													<option value="Software Engineer">Software Engineer</option>
 													<option value="Test Analyst">Test Analyst</option>
@@ -400,7 +390,7 @@
 											<label for="other" class="col-4 my-auto">Other</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
 												<input type="text" name="other" id="other" placeholder="Please enter other details if any" class="form-control col-12" /> <label
-													id="other-error" class="error text-danger" for="other" style=""></label>
+													id="other-error" class="error text-danger" for="other"></label>
 											</div>
 										</div>
 									</div>
@@ -431,8 +421,8 @@
 											<label for="profile-photo" class="col-4 my-auto"> Profile Photo <sup class="text-danger">*</sup>
 											</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<input type="file" name="profilePhoto" id="profile-photo" class="form-control col-12" /> <label id="profile-photo-error"
-													class="error text-danger" for="profile-photo"></label>
+												<input type="file" name="profilePhoto" id="profilePhoto" class="form-control col-12" /> <label id="profilePhoto-error"
+													class="error text-danger" for="profilePhoto"></label>
 											</div>
 										</div>
 									</div>
@@ -540,7 +530,7 @@
 		</div>
 	</div>
 	<div class="alert alert-success col-3" role="alert" id="success">Employee details has been added successfully!</div>
-	
+
 </main>
 <%@include file="commonEnd.jsp"%>
 
@@ -550,7 +540,6 @@
 
 	$(document).on("click",
 			"#employeeDOB,#educationStartDate,#educationEndDate", function() {
-				console.log($(this).siblings().find(".ui-datepicker-trigger"));
 				$(this).next().click();
 				$(this).siblings().find(".ui-datepicker-trigger").trigger()
 			})
@@ -558,13 +547,9 @@
 	$("#employeeskill").select2({
 		placeholder : "Add Skills",
 		selectionAdapter : CustomSelectionAdapter,
-		selectionContainer : $('.foo') ,
-		 theme: "bootstrap" ,
+		selectionContainer : $('.foo'),
+		theme : "bootstrap",
 	});
-	
-
-	
-	
 </script>
 
 

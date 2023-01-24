@@ -13,9 +13,22 @@ $.validator.addMethod("validateName", function(value) {
 	return /^[A-Za-z' ]{3,}$/.test($.trim(value));
 }, "Enter a valid name");
 
+$.validator.addMethod("duplicateLanguage", function(value) {
+	let languageDetail = $(".languages");
+	const language = [];
+	for (let items of languageDetail) {
+		if (language.includes(items.value)) {
+			return false;
+		} else {
+			language.push(items.value);
+		}
+	}
+	return true;
+}, "Language already exists");
+
 //validate company name
 $.validator.addMethod("validateCompanyName", function(value) {
-	if(value.trim()!==""){
+	if (value.trim() !== "") {
 		return /^[A-Za-z0-9' ]{3,}$/.test($.trim(value));
 	}
 	return true;
@@ -23,16 +36,16 @@ $.validator.addMethod("validateCompanyName", function(value) {
 
 //validate current designation value with other input value
 $.validator.addMethod("notEqual", function(value) {
-	if(value.trim()===""){
+	if (value.trim() === "") {
 		return true;
 	}
-    let optionList=[...$("#currentDesignation > option")];
-    for(const items of optionList){
-		if(items.value===value.trim() && value!==""){
+	let optionList = [...$("#currentDesignation > option")];
+	for (const items of optionList) {
+		if (items.value === value.trim() && value !== "") {
 			return false;
 		}
 	}
-    return true;
+	return true;
 }, "Entered value is already available in Current Designation list");
 
 
@@ -47,7 +60,7 @@ $.validator.addMethod("validateEmail", function(value) {
 
 $.validator.addMethod("validateLanguage", function(value) {
 	return allLanguage.length > 0;
-}, "Please select a language");
+}, "Please add atleast one language");
 
 
 //validate phone no 
@@ -56,18 +69,18 @@ $.validator.addMethod("validateMobile", function(value) {
 }, "Enter 10 digit mobile number number must start with 7 to 9");
 
 
-	//validation for date pattern 
-	$.validator.addMethod("DateFormat",function(value){
-		return /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/.test($.trim(value));
-	},"Enter the date in correct format");
-	
+//validation for date pattern 
+$.validator.addMethod("DateFormat", function(value) {
+	return /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/.test($.trim(value));
+}, "Enter the date in correct format");
 
-	//Additional method for validating date of birth 
 
-	$.validator.addMethod("validateDate", function (value) {
-     	let currentDate = new Date();
-     	let mycurrentDate = (currentDate.getDate()) + "/" + (currentDate.getMonth() + 1) + "/" + (currentDate.getFullYear());
-     	let parseSelectedDate = $.datepicker.parseDate("dd/mm/yy", value);
-     	let parseCurrentDate = $.datepicker.parseDate("dd/mm/yy", mycurrentDate);
-     	return parseSelectedDate < parseCurrentDate
-    }, "Please select past date-of-birth");
+//Additional method for validating date of birth 
+
+$.validator.addMethod("validateDate", function(value) {
+	let currentDate = new Date();
+	let mycurrentDate = (currentDate.getDate()) + "/" + (currentDate.getMonth() + 1) + "/" + (currentDate.getFullYear());
+	let parseSelectedDate = $.datepicker.parseDate("dd/mm/yy", value);
+	let parseCurrentDate = $.datepicker.parseDate("dd/mm/yy", mycurrentDate);
+	return parseSelectedDate < parseCurrentDate
+}, "Please select past date-of-birth");
