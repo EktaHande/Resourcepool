@@ -4,7 +4,9 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -66,6 +68,7 @@ public class ResourceController {
 		return "Registration";
 	}
 
+
 	@PostMapping("/ObjectData")
 	@ResponseBody
 	public String getData(HttpServletRequest request) {
@@ -74,4 +77,14 @@ public class ResourceController {
 		return obj.toString();
 	}
 
+
+	@PostMapping("/submitPersonalDetails")
+	@ResponseBody
+	public String submitPersonalDetails(@RequestParam("personalDetails") String personalDetails) {
+		
+		System.out.println(personalDetails);
+		
+		return "Done";
+		
+	}
 }

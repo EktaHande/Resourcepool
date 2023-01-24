@@ -15,11 +15,7 @@ body{
 	border-left: 5px solid green;
 	border-radius: 5px
 }
-#success{
-position: absolute;
-top:0px;
-margin-left:25%
-}
+
 
 .wizard-icon {
 	position: absolute;

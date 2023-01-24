@@ -85,6 +85,7 @@ $(document).ready(function() {
 			inst.dpDiv.addClass('datePickForStartDate');
 		},
 		onClose: function(dateText, inst) {
+			inst.dpDiv.removeClass('datePickForStartDate');
 			$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
 		},
 		showButtonPanel: true,
@@ -104,6 +105,7 @@ $(document).ready(function() {
 			inst.dpDiv.addClass('datePickForStartDate');
 		},
 		onClose: function(dateText, inst) {
+			inst.dpDiv.removeClass('datePickForStartDate');
 			$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
 		},
 		showButtonPanel: true,

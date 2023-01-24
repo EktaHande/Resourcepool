@@ -1,54 +1,65 @@
 <%@include file="commonUpper.jsp"%>
 
+<style>
+
+.select2-selection--multiple:before {
+	content :none !important; 
+	position: absolute;
+    right: 7px;
+    top: 42%;
+    border-top: 5px solid #888;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+</style>
 <main class="main">
 	<div class="">
 		<div class="card-body">
-			<form id="regEmployeeForm" action="#">
+			<form id="regEmployeeForm" action="#" method="post">
 				<div class="d-flex flex-row-reverse justify-content-between">
 					<div class="col-10 d-flex justify-content-between card p-3">
 						<div class="tab">
-							<div class="form-tab-content p-3 w-100">
+							<div class="form-tab-content p-3">
 								<h4 class="mb-4">
 									<strong>Personal Details</strong>
 								</h4>
-								<div class="d-flex mb-5">
-									<div class="d-flex col-6">
-										<label for="employeeFirstName" class="col-3 my-auto"> FirstName <sup>*</sup>
-										</label>
-										<div class="col-9">
-											<input type="text" name="employeeFirstName" id="employeeFirstName" class="form-control col-12" />
+								<hr />
+								<div class="row m-0 p-0 justify-content-center">
+									<div class="w-75">
+										<div class="d-flex flex-wrap col-12 mb-3">
+											<label for="employeeFirstName" class="col-12 col-md-3 my-auto">First Name<sup>*</sup></label>
+											<div class="col-12 col-md-6">
+												<input type="text" name="employeeFirstName" id="employeeFirstName" class="form-control col-12" placeholder="First Name" /> <label
+													for="employeeFirstName" class="text-danger error"></label>
+											</div>
 										</div>
-									</div>
-									<div class="d-flex col-6 ms-3">
-										<label for="lastName" class="col-3 my-auto"> LastName <sup>*</sup>
-										</label>
-										<div class="col-9">
-											<input type="text" name="employeeLastName" id="employeeLastName" class="form-control col-12" />
+										<div class="d-flex flex-wrap col-12 mb-3">
+											<label for="lastName" class="col-12 col-md-3 my-auto">Last Name<sup>*</sup></label>
+											<div class="col-12 col-md-6">
+												<input type="text" name="employeeLastName" id="employeeLastName" class="form-control col-12" placeholder="Last Name" /> <label
+													for="employeeLastName" class="text-danger error"></label>
+											</div>
 										</div>
-									</div>
-								</div>
-								<div class="d-flex mb-5">
-									<div class="d-flex col-6">
-										<label for="employeeEmail" class="col-3 my-auto"> Email <sup>*</sup>
-										</label>
-										<div class="col-9">
-											<input type="text" name="employeeEmail" id="employeeEmail" class="form-control col-12" />
+										<div class="d-flex flex-wrap col-12 mb-3">
+											<label for="employeeEmail" class="col-12 col-md-3 my-auto">Email-Id<sup>*</sup></label>
+											<div class="col-12 col-md-6">
+												<input type="text" name="employeeEmail" id="employeeEmail" class="form-control col-12" placeholder="Email-Id" /> <label for="employeeEmail"
+													class="text-danger error"></label>
+											</div>
 										</div>
-									</div>
-									<div class="d-flex col-6 ms-3">
-										<label for="employeeMobile" class="col-3 my-auto"> Mobile No <sup>*</sup>
-										</label>
-										<div class="col-9">
-											<input type="number" name="employeeMobile" id="employeeMobile" class="form-control col-12" />
+										<div class="d-flex flex-wrap  col-12 mb-3">
+											<label for="employeeMobile" class="col-12 col-md-3 my-auto">Mobile No<sup>*</sup></label>
+											<div class="col-12 col-md-6">
+												<input type="number" name="employeeMobile" id="employeeMobile" class="form-control col-12 no-e" placeholder="Mobile No" /> <label
+													for="employeeMobile" class="text-danger error"></label>
+											</div>
 										</div>
-									</div>
-								</div>
-								<div class="d-flex mb-5">
-									<div class="d-flex col-6">
-										<label for="employeDOB" class="col-3 my-auto"> Date Of Birth <sup>*</sup>
-										</label>
-										<div class="col-9">
-											<input type="text" name="employeeDOB" id="employeeDOB" class="form-control col-12" placeholder="dd/mm/yyyy" />
+										<div class="d-flex flex-wrap col-12 mb-3">
+											<label for="employeDOB" class="col-12 col-md-3  my-auto">Date Of Birth<sup>*</sup></label>
+											<div class="col-12 col-md-6 d-flex flex-wrap position-relative">
+												<input type="text" name="employeeDOB" id="employeeDOB" class="form-control col-12" placeholder="dd/mm/yyyy" readonly="readonly" /> <label
+													for="employeeDOB" class="text-danger error"></label>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -64,9 +75,19 @@
 							</button>
 							<div class="employmentTable"></div>
 						</div>
-						<div class="tab"></div>
 						<div class="tab">
-							<div class="form-tab-content p-3 w-100">
+							<div class="form-content-tab p-3">
+								<h4 class="mb-4">
+									<strong>Education Details</strong>
+								</h4>
+								<hr />
+								<!-- Modal trigger button -->
+								<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#educationDetailForm">Add Education</button>
+								<div class="educationTable"></div>
+							</div>
+						</div>
+						<div class="tab">
+							<div class="form-tab-content p-3">
 								<h4 class="mb-4">
 									<strong>Expertise Level</strong>
 								</h4>
@@ -139,64 +160,148 @@
 											</div>
 										</div>
 									</div>
-								<div class="d-flex justify-content-center w-75">
-									<button type="button" class="btn btn-primary m-2 addLanguages">
-										<span class="mx-2 fs-5 fw-bold">+</span> Add Language
-									</button>
-								</div>
+									<div class="d-flex justify-content-center w-75">
+										<button type="button" class="btn btn-primary m-2 addLanguages">
+											<span class="mx-2 fs-5 fw-bold">+</span> Add Language
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab"></div>
-						<div class="tab"></div>
+						<div class="tab">
+							<div class="form-tab-content p-3 ">
+								<h4 class="mb-4">
+									<strong>Employee Rate</strong>
+								</h4>
+								<hr />
+								<div class="d-flex ">
+									<div class="col-9 d-flex flex-column">
+										<label for="employeeHourRate">Hourly Rate<sup>*</sup></label> <strong class="text-secodary">Total amount client will see</strong>
+									</div>
+									<div class="col-3 d-flex">
+										<input type="number" name="employeeHourRate" id="employeeHourRate" class="form-control" placeholder="0.0" /> <label for=""
+											class="text-secondary my-auto fw-bold ms-3">/hr</label>
+									</div>
+								</div>
+								<label for="employeeHourRate" class="mb-4 text-danger error"></label>
+								<hr class="text-secondary" />
+								<div class="d-flex ">
+									<div class="col-9 d-flex flex-column">
+										<label for="serviceFee">Company Service Fee<sup>*</sup></label> <strong class="text-secodary">The service fee is % when you begin a contract
+											with new client</strong>
+									</div>
+									<div class="col-3 d-flex">
+										<input type="number" name="serviceFee" id="serviceFee" class="form-control no-e" placeholder="0.0" /> <label for="serviceFee"
+											class="text-secondary my-auto fw-bold ms-3">/hr</label>
+									</div>
+								</div>
+								<label for="serviceFee" class="mb-4 text-danger error"></label>
+								<hr class="text-secondary" />
+								<div class="d-flex mb-4">
+									<div class="col-9 d-flex flex-column">
+										<label for="finalAmount">You will Recieve</label> <strong class="text-secodary">The estimated amount after you will recieve after
+											service fees</strong>
+									</div>
+									<div class="col-3 d-flex">
+										<input type="number" readonly="readonly" name="finalAmount" id="finalAmount" class="no-e form-control" placeholder="0.0" /> <label
+											for="finalAmount" class="text-secondary my-auto fw-bold ms-3">/hr</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab">
+							<div class="tab-form-content p-3">
+								<h4 class="mb-4">
+									<strong>Skill Details</strong>
+								</h4>
+								<hr />
+								<div class="d-flex justify-content-center">
+									<div class="w-75">
+										<div class="row mb-3">
+											<label for="resumeTitle" class="col-sm-3 col-form-label">Resume Title<sup>*</sup></label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="resumeTitle" name="resumeTitle" placeholder="Resume Title"> <label for="resumeTitle"
+													class="error text-danger"></label>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="employeeskill" class="col-sm-3 col-form-label">Skills<sup>*</sup></label>
+											<div class="col-sm-6">
+												<select class="form-select" name="employeeskill" style="width: 100% !important;" id="employeeskill"
+													multiple="multiple">
+													<option value="java">java</option>
+													<option value="pyhton">python</option>
+													<option value="c#">C#</option>
+													<option value="Ajax">Ajax</option>
+													<option value="asp.net">Asp.net</option>
+												</select>
+												<label for="employeeskill" class="error text-danger"></label>
+												<div>
+													<label for="" class="fw-bold text-secondary mt-2">Selected Skills</label>
+													<div class="col-sm-12 foo my-3" style="border:none;">
+													
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row mb-3">
+											<label for="employeeResume" class="col-sm-3 col-form-label">Upload Resume<sup>*</sup></label>
+											<div class="col-sm-6">
+												<input class="form-control" type="file" id="employeeResume" name="employeeResume"> <label for="employeeResume"
+													class="error text-danger"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div style="overflow: auto;">
 							<div class="d-flex justify-content-between">
-								<button type="button" class="btn btn-outline-dark" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+								<button type="button" class="btn btn-outline-dark" id="prevBtn" onclick="prev(-1)">Previous</button>
 								<button type="button" class="btn btn-outline-primary next" id="nextBtn" onclick="nextPrev(1)">Next</button>
 							</div>
 						</div>
 					</div>
 					<div class="col-2 d-flex flex-column custome-h justify-content-around">
 						<div class="d-flex text-secondary">
-							<label for="" class="col-9"> <strong>Personal Details</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Personal Details</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 						<div class="d-flex text-secondary">
-							<label for="" class="col-9"> <strong>Employement Details</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Employement Details</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 						<div class="d-flex text-secondary">
-							<label for="" class="col-9"> <strong>Education Qualifications</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Education Qualifications</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 						<div class="d-flex  text-secondary">
-							<label for="" class="col-9"> <strong>Expertise Level</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Expertise Level</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 						<div class="d-flex text-secondary">
-							<label for="" class="col-9"> <strong>Language</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Language</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 						<div class="d-flex text-secondary">
-							<label for="" class="col-9"> <strong>Employee Rate</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Employee Rate</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 						<div class="d-flex text-secondary">
-							<label for="" class="col-9"> <strong>Skill Details</strong>
+							<label for="" class="col-9 wiz-label"> <strong>Skill Details</strong>
 							</label> <span class="step mx-2 text-white"> <em class="wizard-icon ri-check-fill"></em>
 							</span>
 						</div>
 					</div>
 				</div>
 			</form>
-
-			<!-- 			Modal for collecting data of employment details -->
+			<!--Modal for collecting data of employment details -->
 			<div class="modal fade" id="ExtralargeModal" tabindex="-1" style="display: none;" aria-hidden="true">
 				<form action="" id="addEmployeeDetailForm">
 					<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl">
@@ -215,8 +320,8 @@
 											<label for="companyName" class="col-4 my-auto"> Company Name <sup class="text-danger">*</sup>
 											</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<input type="text" name="companyName" id="companyName" placeholder="Please enter company name" class="form-control col-12" /> <label id="companyName-error"
-													class="error text-danger" for="companyName"></label>
+												<input type="text" name="companyName" id="companyName" placeholder="Please enter company name" class="form-control col-12" /> <label
+													id="companyName-error" class="error text-danger" for="companyName"></label>
 											</div>
 										</div>
 										<div class="d-flex col-12 col-md-6 mb-3">
@@ -238,8 +343,8 @@
 										<div class="d-flex col-12 col-md-6 mb-3">
 											<label for="pincode" class="col-4 my-auto">Pincode</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<input type="text" name="pincode" id="pincode" placeholder="Please enter pincode" class="form-control col-12" /> <label id="pincode-error" class="error text-danger"
-													for="pincode"></label>
+												<input type="text" name="pincode" id="pincode" placeholder="Please enter pincode" class="form-control col-12" /> <label
+													id="pincode-error" class="error text-danger" for="pincode"></label>
 											</div>
 										</div>
 										<div class="d-flex col-12 col-md-6 mb-3">
@@ -273,8 +378,8 @@
 												class="text-danger">*</sup>
 											</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<input type="text" name="totalWorkExperiance" id="totalWorkExperiance" placeholder="Please enter work experiance" class="form-control col-12" /> <label
-													id="totalWorkExperiance-error" class="error text-danger" for="totalWorkExperiance"></label>
+												<input type="text" name="totalWorkExperiance" id="totalWorkExperiance" placeholder="Please enter work experiance"
+													class="form-control col-12" /> <label id="totalWorkExperiance-error" class="error text-danger" for="totalWorkExperiance"></label>
 											</div>
 										</div>
 									</div>
@@ -294,8 +399,8 @@
 										<div class="d-flex col-12 col-md-6 mb-3">
 											<label for="other" class="col-4 my-auto">Other</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<input type="text" name="other" id="other" placeholder="Please enter other details if any" class="form-control col-12" /> <label id="other-error" class="error text-danger" for="other"
-													style=""></label>
+												<input type="text" name="other" id="other" placeholder="Please enter other details if any" class="form-control col-12" /> <label
+													id="other-error" class="error text-danger" for="other" style=""></label>
 											</div>
 										</div>
 									</div>
@@ -303,13 +408,13 @@
 									<div class="row mb-3">
 										<div class="d-flex col-12 col-md-6 mb-3 position-relative">
 											<label for="startDate" class="col-4 my-auto">Start Date</label>
-											<div class="col-8 d-flex align-items-center">
+											<div class="col-8 cust-datepick ">
 												<input type="text" name="startDate" placeholder="Please select start date" readonly="readonly" id="startDate" class="form-control" />
 											</div>
 										</div>
 										<div class="d-flex col-12 col-md-6 mb-3 position-relative">
 											<label for="endDate" class="col-4 my-auto">End Date</label>
-											<div class="col-8 d-flex align-items-center">
+											<div class="col-8 cust-datepick">
 												<input type="text" name="endDate" placeholder="Please select end date" id="endDate" readonly="readonly" class="form-control" />
 											</div>
 										</div>
@@ -318,8 +423,8 @@
 										<div class="d-flex col-12 col-md-6 mb-3">
 											<label for="description" class="col-4 my-auto">Description</label>
 											<div class="col-8 d-flex flex-wrap align-items-center">
-												<input type="text" name="description" placeholder="Please enter description" id="description" class="form-control col-12" /> <label id="description-error" class="error"
-													for="description"></label>
+												<input type="text" name="description" placeholder="Please enter description" id="description" class="form-control col-12" /> <label
+													id="description-error" class="error" for="description"></label>
 											</div>
 										</div>
 										<div class="d-flex col-12 col-md-6 mb-3">
@@ -347,8 +452,119 @@
 					</div>
 				</form>
 			</div>
+			<!--Modal for collecting data of Education details -->
+			<div class="modal fade" id="educationDetailForm" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+				aria-labelledby="modalTitleId" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="modalTitleId">Education Qualification</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body mx-3">
+							<div class="form-tab-content p-3">
+								<form action="" id="educationDetail">
+									<div class="row  mb-3">
+										<div class="col-12 col-md-6 d-flex flex-wrap">
+											<label for="schoolName" class="col-12 col-md-4">School Name</label>
+											<div class="col-12 col-md-8">
+												<input type="text" name="schoolName" id="schoolName" class="form-control" placeholder="School Name" /> <label for="schoolName"
+													class="text-danger error customehide"></label>
+											</div>
+										</div>
+										<div class="col-12 col-md-6 d-flex flex-wrap">
+											<label for="streamName" class="col-12 col-md-4">Stream</label>
+											<div class="col-12 col-md-8">
+												<div class="">
+													<select class="form-select" name="streamName" id="streamName">
+														<option value="">Select Stream</option>
+														<option value="s-1">stream 1</option>
+														<option value="s-2">stream 2</option>
+														<option value="s-3">stream 3</option>
+													</select> <label for="streamName" class=" error text-danger customehide"></label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="col-12 col-md-6 d-flex flex-wrap">
+											<label for="degree" class="col-12 col-md-4">Degree</label>
+											<div class="col-12 col-md-8">
+												<div class="col-12">
+													<select class="form-select" name="degree" id="degree">
+														<option value="">Select Degree</option>
+														<option value="d-1">Degree 1</option>
+														<option value="d-2">Degree 2</option>
+														<option value="d-3">Degree 3</option>
+													</select>
+												</div>
+												<label for="degree" class="text-danger error customehide"></label>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="d-flex flex-wrap col-12 col-md-6 mb-3 ">
+											<label for="educationStartDate" class="col-12 col-md-4 my-auto">Start Date</label>
+											<div class="col-12 col-md-8 d-flex flex-wrap  position-relative">
+												<input type="text" name="educationStartDate" id="educationStartDate" readonly="readonly" class="form-control" placeholder="Start Date" />
+												<label class="error text-danger customehide " for="educationStartDate"></label>
+											</div>
+										</div>
+										<div class="col-12 col-md-6 mb-3 d-flex flex-wrap">
+											<label for="educationEndDate" class="col-12 col-md-4 my-auto">End Date</label>
+											<div class="col-12 col-md-8 d-flex flex-wrap  position-relative">
+												<input type="text" name="educationEndDate" id="educationEndDate" readonly="readonly" class="form-control" placeholder="End Date" /> <label
+													id="educationEndDate-error" class="error text-danger customehide " for="educationEndDate"></label>
+											</div>
+										</div>
+									</div>
+									<div class="row mb-3">
+										<div class="col-md-6 col-12 d-flex flex-wrap">
+											<label for="description" class="col-12 col-md-4">Description</label>
+											<div class="col-12 col-md-8 ">
+												<textarea class="form-control" name="description" id="description" placeholder="Description"></textarea>
+												<label for="" class="error text-danger customehide"></label>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-secondary close-modal" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary saveEducation">Save</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+	<div class="alert alert-success col-3" role="alert" id="success">Employee details has been added successfully!</div>
+	
 </main>
 <%@include file="commonEnd.jsp"%>
+
+<script>
+	let CustomSelectionAdapter = $.fn.select2.amd
+			.require("select2/selection/customSelectionAdapter");
+
+	$(document).on("click",
+			"#employeeDOB,#educationStartDate,#educationEndDate", function() {
+				console.log($(this).siblings().find(".ui-datepicker-trigger"));
+				$(this).next().click();
+				$(this).siblings().find(".ui-datepicker-trigger").trigger()
+			})
+
+	$("#employeeskill").select2({
+		placeholder : "Add Skills",
+		selectionAdapter : CustomSelectionAdapter,
+		selectionContainer : $('.foo') ,
+		 theme: "bootstrap" ,
+	});
+	
+
+	
+	
+</script>
+
 

@@ -14,10 +14,16 @@
 <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
 <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
 <link href="assets/vendor/jquery-ui-1.13.2/jquery-ui.css" rel="stylesheet">
 <link href="assets/vendor/datatable/datatables.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/select2.min.css" />
 
+<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
+<link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/select2.min.css" />
+<link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/selectCustome.css"/>
+<link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/BootsrtrapThemeForSelect2.css"  />
+<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
+
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />

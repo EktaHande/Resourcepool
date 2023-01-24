@@ -10,8 +10,30 @@
 --------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
+@media (max-width: 450px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .wiz-label {
+    display: none;
+  }
+  
+  .wizard-icon {
+	position: absolute;
+	top: auto;
+	left: 2px ;
+	
+}
+  
+
+  
+}
 body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
@@ -1258,3 +1280,4 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+

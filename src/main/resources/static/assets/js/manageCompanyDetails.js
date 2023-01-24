@@ -303,3 +303,116 @@ $("#manageCompanyDetails")
 
 
 
+
+
+//Ajax
+
+	let object = {};
+	function createObject(){
+		address();
+		contact();
+		bankObject();
+		allcompany();
+		object['addressDetails']   = addressObject;
+		object['contactDetails']   = contactObject;
+		object['bankDetails']   = bankDetails;
+		object['allDocumentsDetails']   = allcompanyDocuments;
+	    let allElement = $(".companyDetails").find('input');
+		$.each(allElement, function() {
+			object[$(this).attr('name')] = $(this).val();
+		});
+		let selectElement = $(".companyDetails").find('select');
+		$.each(selectElement, function() {
+			object[$(this).attr('name')] = $(this).val();
+		});
+		
+	    let allGstDetails = $(".gstNumber").find('input');
+       	$.each(allGstDetails, function() {
+			if($(this).attr("type") == "radio"){
+				if($(this).is(":checked")){
+				object[$(this).attr('name')] = $(this).val();	
+				}
+			}else{
+				object[$(this).attr('name')] = $(this).val();
+			}
+			
+		});
+	
+		return true;
+	}
+	
+	let addressObject = {};
+	
+	function address(){
+		
+		let addressDetailsInput = $(".addressDetails").find('input');
+		$.each(addressDetailsInput, function(){
+			addressObject[$(this).attr('name')] = $(this).val();
+		})
+		let selectElement = $(".addressDetails").find('select');
+        $.each(selectElement, function() {
+			addressObject[$(this).attr('name')] = $(this).val();
+		});
+		
+	}
+	
+	let contactObject = {};
+	function contact(){
+		let contactDetailsInput = $(".contactDetails").find('input');
+		$.each(contactDetailsInput, function(){
+			contactObject[$(this).attr('name')] = $(this).val();
+		})
+		let selectElement = $(".contactDetails").find('select');
+        $.each(selectElement, function() {
+			contactObject[$(this).attr('name')] = $(this).val();
+		});
+		
+	}
+
+	  let bankDetails = {};
+	  function bankObject(){
+		
+		let bankDetailsInput = $(".bankDetails").find('input');
+		$.each(bankDetailsInput, function(){
+			bankDetails[$(this).attr('name')] = $(this).val();
+		})
+		let selectElement = $(".bankDetails").find('select');
+        $.each(selectElement, function() {
+			bankDetails[$(this).attr('name')] = $(this).val();
+		});
+	}
+	
+	
+	
+	  let allcompanyDocuments = {};
+	  function allcompany(){
+		let uploadDocuments = $(".uploadDocuments").find('input');
+		$.each(uploadDocuments, function(){
+			allcompanyDocuments[$(this).attr('name')] = $(this).val();
+		})
+	}
+	
+	
+	function ajaxCall(){
+		createObject();
+		$.ajax({
+			url : "ObjectData",
+			type: "POST",
+			data : {
+				"obj" : JSON.stringify(object)
+			},
+         success: function (response) {
+           console.log(JSON.parse(response))
+           $("#success").show();
+		   setTimeout(function() { $("#success").hide();
+           window.location.href ="manageCompanyDetails";
+		   }, 3000);
+                },
+        error: function (response) {
+            console.log(response);   
+        }
+		})	
+	}
+
+
+

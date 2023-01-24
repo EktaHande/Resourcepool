@@ -15,7 +15,6 @@ $.validator.addMethod("validateName", function(value) {
 
 //validate company name
 $.validator.addMethod("validateCompanyName", function(value) {
-	
 	if(value.trim()!==""){
 		return /^[A-Za-z0-9' ]{3,}$/.test($.trim(value));
 	}
@@ -48,24 +47,27 @@ $.validator.addMethod("validateEmail", function(value) {
 
 $.validator.addMethod("validateLanguage", function(value) {
 	return allLanguage.length > 0;
-}, "Please Select a language");
+}, "Please select a language");
 
 
-//validation for date pattern 
-$.validator.addMethod("DateFormat", function(value) {
-	return /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/.test($.trim(value));
-}, "Enter 10 digit mobile number Number must start with 7 to 9");
 //validate phone no 
 $.validator.addMethod("validateMobile", function(value) {
 	return /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test($.trim(value));
-}, "Enter 10 digit mobile number Number must start with 7 to 9");
+}, "Enter 10 digit mobile number number must start with 7 to 9");
 
-//Additional method for validating date of birth 
 
-$.validator.addMethod("validateDate", function(value) {
-	let currentDate = new Date();
-	let mycurrentDate = (currentDate.getDate()) + "/" + (currentDate.getMonth() + 1) + "/" + (currentDate.getFullYear());
-	let parseSelectedDate = $.datepicker.parseDate("dd/mm/yy", value);
-	let parseCurrentDate = $.datepicker.parseDate("dd/mm/yy", mycurrentDate);
-	return parseSelectedDate < parseCurrentDate
-}, "Please select past date-of-birth");
+	//validation for date pattern 
+	$.validator.addMethod("DateFormat",function(value){
+		return /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/.test($.trim(value));
+	},"Enter the date in correct format");
+	
+
+	//Additional method for validating date of birth 
+
+	$.validator.addMethod("validateDate", function (value) {
+     	let currentDate = new Date();
+     	let mycurrentDate = (currentDate.getDate()) + "/" + (currentDate.getMonth() + 1) + "/" + (currentDate.getFullYear());
+     	let parseSelectedDate = $.datepicker.parseDate("dd/mm/yy", value);
+     	let parseCurrentDate = $.datepicker.parseDate("dd/mm/yy", mycurrentDate);
+     	return parseSelectedDate < parseCurrentDate
+    }, "Please select past date-of-birth");

@@ -51,7 +51,7 @@ $(document).ready(function() {
 				required: "Please, enter company email-address!"
 			},
 			companyPassword: {
-				required: "Please, enter company password!"
+				required: "Please enter company password!"
 			}
 		}
 	})
