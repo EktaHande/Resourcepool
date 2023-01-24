@@ -1,3 +1,5 @@
+
+
 <%@include file="commonUpper.jsp"%>
 <link href="assets/css/manageCompany.css" rel="stylesheet">
 <main class="main">
@@ -41,9 +43,11 @@
 					<div class="col-sm-10 d-flex justify-content-between card p-3" id="formDiv">
 
 						<h3 class="text-center">Manage Company Details</h3>
-						<div class="tab">
+						<div class="tab companyDetails mt-2">
 							<h5 class="text-left ms-3">Company Details:</h5>
-							<div class="container mt-3">
+								<hr />
+							<div class="row justify-content-center mt-4">
+								<div class="w-75">
 								<div class="row">
 									<div class="col-3 ">
 										<label for="companyName"> Company Name <span class="text-danger">*</span></label>
@@ -80,7 +84,7 @@
 									</div>
 									<div class="col-6">
 										<select class="form-select" name="industry" id="industry">
-											<option value="0">Select One</option>
+											<option value="0">Select Industry</option>
 											<option value="New Delhi">New Delhi</option>
 											<option value="Istanbul">Istanbul</option>
 											<option value="Jakarta">Jakarta</option>
@@ -109,15 +113,18 @@
 											for="imageUpload" class="error"></label>
 									</div>
 								</div>
-
+								
+								</div>
 
 							</div>
 						</div>
 
 
-						<div class="tab">
+						<div class="tab addressDetails">
 							<h5 class="text-left ms-3">Address Details:</h5>
-							<div class="container  mt-3">
+								<hr />
+							<div class="row justify-content-center mt-4">
+								<div class="w-75">
 								<div class="row">
 									<div class="col-3">
 										<label for="addressLineOne"> Address Line 1<span
@@ -197,21 +204,23 @@
 										<label 	for="pincode" class="error"></label>
 									</div>
 								</div>
-
+                              </div>
 							</div>
 						</div>
 
-						<div class="tab">
-							<h5 class="text-left ms-3">Contact Details:</h5>
-							<div class="container  mt-3">
+						<div class="tab contactDetails">
+							<h5 class="text-left ms-3 contactDetails">Contact Details:</h5>
+								<hr />
+							<div class="row justify-content-center mt-4">
+								<div class="w-75">
 								<div class="row">
 									<div class="col-3">
-										<label for="contactPersonName"> Contact Person Name: <span class="text-danger">*</span></label> 
+										<label for="contactPersonName" style="letter-spacing: -0.5px;"> Contact Person Name <span class="text-danger">*</span></label> 
 										<label for="contactPersonName" class="text-muted fs-6"> (Enter HR or director) </label>
 
 									</div>
 									<div class="col-6">
-										<input placeholder="Enter contact name" name="contactPersonName" class="form-control" id="contactPersonName">
+										<input placeholder="Enter contact  person name" name="contactPersonName" class="form-control" id="contactPersonName">
 										 <label for="contactPersonName" class="error"></label>
 									</div>
 								</div>
@@ -234,7 +243,7 @@
 										</label>
 									</div>
 									<div class="col-6">
-										<input placeholder="Enter phone number" name="phoneNumber" class="form-control" id="phoneNumber" type="number">
+										<input placeholder="Enter phone number" name="phoneNumber" class="form-control no-e" id="phoneNumber" type="number">
 										<label for="phoneNumber" class="error"></label>
 									</div>
 								</div>
@@ -251,13 +260,18 @@
 										<label for="alternateEmailId" class="error"></label>
 									</div>
 								</div>
+								
+								
+							</div>	
                        	</div>
 						</div>
 
 
-						<div class="tab">
+						<div class="tab gstNumber">
 							<h5 class="text-left ms-3">GST Details:</h5>
-							<div class="container  mt-3">
+								<hr />
+		                      <div class="row justify-content-center mt-4">
+								<div class="w-75">
 								<div class="row">
 
 									<div class="col-3">
@@ -272,7 +286,7 @@
 													<label class="form-check-label me-3" for="flexRadioDefault1">Yes </label>
 												</div>
 												<div class="form-check">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="No">
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="no">
 													<label class="form-check-label" for="flexRadioDefault2">No</label>
 												</div>
 											</div>
@@ -284,7 +298,8 @@
 									</div>
 
 								</div>
-								<div class="row mt-4 gstNumber">
+								<div class="gstDiv">
+								<div class="row mt-4">
 									<div class="col-3">
 										<label for="GSTNumber"> GST Number: <span class="text-danger">*</span></label>
 									</div>
@@ -294,16 +309,22 @@
 										<label for="GSTNumber" class="error"></label>
 									</div>
 								</div>
+								</div>
+							</div>	
 							</div>
 						</div>
 
 
-						<div class="tab">
-							<h5 class="text-left ms-3">Bank Details:</h5>
-							<div class="container  mt-3">
+						<div class="tab bankDetails">
+							<h5 class="text-left ms-3 ">Bank Details:</h5>
+								<hr />
+								
+								 <div class="row justify-content-center mt-4">
+								<div class="w-75">
+							
 								<div class="row">
 									<div class="col-3">
-										<label for="accountHolderName"> Account Holder Name:</label> <span class="text-danger">*</span>
+										<label for="accountHolderName" style="letter-spacing: -0.5px;"> Account Holder Name</label> <span class="text-danger">*</span>
 									</div>
 
 									<div class="col-6">
@@ -320,7 +341,7 @@
 									</div>
 									<div class="col-6">
 										<select class="form-select" name="accountType" id="accountType">
-											<option value="0">Select Account-Type</option>
+											<option value="0">Select Account Type</option>
 											<option value="SavingAccount">Saving</option>
 											<option value="CurrentAccount">Current</option>
 											<option value="SalaryAccount">Salary</option>
@@ -331,7 +352,7 @@
 
 								<div class="row mt-4">
 									<div class="col-3">
-										<label for="accountNumber"> Account Number: <span class="text-danger">*</span></label>
+										<label for="accountNumber"> Account Number <span class="text-danger">*</span></label>
 									</div>
 
 									<div class="col-6">
@@ -342,7 +363,7 @@
 
 								<div class="row mt-4">
 									<div class="col-3">
-										<label for="ifscCode"> IFSC Code: <span class="text-danger">*</span></label>
+										<label for="ifscCode"> IFSC Code <span class="text-danger">*</span></label>
 									</div>
 
 									<div class="col-6">
@@ -357,7 +378,7 @@
 									</div>
 									<div class="col-6">
 										<select class="form-select" name="branchName" id="branchName">
-											<option value="0">Select Branch-Name</option>
+											<option value="0">Select Branch Name</option>
 											<option value="SavingAccount">Thane</option>
 											<option value="CurrentAccount">Mulund</option>
 											<option value="SalaryAccount">Ghatkopar</option>
@@ -366,14 +387,16 @@
 								</div>
 
 
-
+</div>
 							</div>
 						</div>
 
 
-						<div class="tab">
+	                        <div class="row justify-content-center mt-4">
+								<div class="w-75">
+						   <div class="tab uploadDocuments">
 
-							<div class="row mt-3 ">
+							<div class="row mt-4">
 								<div class="col-3">
 									<label for="uploadDocuments"> Upload Documents <span class="text-danger">*</span></label>
 								</div>
@@ -384,10 +407,12 @@
 							</div>
 
 						</div>
+						</div>
+						</div>
 
 						<div style="overflow: auto;">
 							<div class="d-flex justify-content-between">
-								<button type="button" class="btn btn-outline-dark" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+								<button type="button" class="btn btn-outline-dark" id="prevBtn"    onclick="nextPrev(-1)">Previous</button>
 								<button type="button" class="btn btn-outline-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
 							</div>
 						</div>
@@ -397,6 +422,10 @@
 				</div>
 			</form>
 		</div>
+		
+<div class="alert alert-success col-3"  role="alert" id="success">
+Company details has been added successfully!
+</div>
 	</div>
 </main>
 <%@include file="commonEnd.jsp"%>

@@ -16,7 +16,7 @@
 <script src="assets/vendor/select2-4.0.13/dist/js/select2.full.min.js"></script>
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-<script src="assets/JQV/additionalMethod.js"></script>
+<script src="assets/jqueryAllAdditionalMethods/additionalMethod.js"></script>
 <script src="assets/js/employeeDetails.js"></script>
 <script src="assets/js/wizardForm.js"></script>
 <script src="assets/js/forgotPassword.js"></script>

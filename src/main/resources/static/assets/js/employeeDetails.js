@@ -60,9 +60,7 @@ $(document).on("click", ".addLanguages", function() {
 	$(".addLanguages").hide();
 })
 
-if (allLanguage.length == 0) {
-	console.log(languages);
-}
+
 $("#languagesProficiency").select2({
 	placeholder: "Please select languages proficiency",
 	text: '',

@@ -1,7 +1,10 @@
 
 /* Hide all steps by default: */
-.tab {
+.tabOne {
 	display: none;
+}
+body{
+	position: relative;
 }
 
 .custome-h {
@@ -12,15 +15,17 @@
 	border-left: 5px solid green;
 	border-radius: 5px
 }
+#success{
+position: absolute;
+top:0px;
+margin-left:25%
+}
 
 .wizard-icon {
 	position: absolute;
 	top: -5px;
 }
 
-.row {
-	margin-left: 20%
-}
 
 label.error {
 	color: red;
