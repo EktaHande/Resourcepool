@@ -1,13 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<%@include file="head.jsp"%>
 <title>Registration Page</title>
-<%@include file="indexcss.jsp"%>
-<link href="assets/css/registration.css" rel="stylesheet">
-</head>
 <body>
 	<div class="container">
 		<section
@@ -70,15 +62,11 @@
 								</form>
 							</div>
 						</div>
-					
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
-<script type="text/javascript" src="assets/js/JQ.js"></script>
-<script type="text/javascript" src="assets/js/JQV.js"></script>		
-<script type="text/javascript" src="assets/js/JQAV.js"></script>
-<script type="text/javascript" src="assets/js/validation.js"></script>
+<%@include file="commonEnd.jsp"%>
 </body>
 </html>

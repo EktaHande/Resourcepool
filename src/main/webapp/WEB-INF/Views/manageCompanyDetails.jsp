@@ -1,8 +1,5 @@
 
 <%@include file="commonUpper.jsp"%>
-
-<link href="assets/css/manageCompany.css" rel="stylesheet">
-
 <main class="main">
 	<div class="">
 		<div class="card-body">
@@ -244,7 +241,7 @@
 											<label for="alternateEmailId"> Alternate Email-Id</label>
 										</div>
 										<div class="col-6">
-											<input placeholder="Enter email-id" name="alternateEmailId" class="form-control" id="alternateEmailId"> <label
+											<input placeholder="Enter Email-Id" name="alternateEmailId" class="form-control" id="alternateEmailId"> <label
 												for="alternateEmailId" class="error"></label>
 										</div>
 									</div>
@@ -315,7 +312,7 @@
 										</div>
 
 										<div class="col-6">
-											<input placeholder="Enter holder name" name="accountHolderName" class="form-control" id="accountHolderName"> <label
+											<input placeholder="Enter account holder name" name="accountHolderName" class="form-control" id="accountHolderName"> <label
 												for="accountHolderName" class="error"></label>
 										</div>
 									</div>
@@ -408,7 +405,11 @@
 			</form>
 		</div>
 
-		<div class="alert alert-success col-3" role="alert" id="success">Company details has been added successfully!</div>
+
+  <div class="alert alert-success col-3" role="alert" id="success">Company details has been added successfully!</div>
+   <div class="alert alert-success col-3"  role="alert" id="success">
+    Company details has been added successfully!
+   </div>
 	</div>
 </main>
 

@@ -22,10 +22,7 @@ public class ConfigFile {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 
 		viewResolver.setPrefix("WEB-INF/Views/");
-		viewResolver.setSuffix(".jsp");
-
-		
-		
+		viewResolver.setSuffix(".jsp");	
 		return viewResolver;
 	}
 	

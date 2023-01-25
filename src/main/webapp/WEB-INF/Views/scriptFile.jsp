@@ -25,6 +25,10 @@
 <script src="assets/js/employeeDetails.js"></script>
 <script src="assets/js/forgotPassword.js"></script>
 <script src="assets/js/wizardForm.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/manageCompanyDetails.js"></script>
+<script src="assets/JqueryAllAdditionMethods/commonMethod.js" ></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+

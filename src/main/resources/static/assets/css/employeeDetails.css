@@ -1,0 +1,138 @@
+/*Datepicker css */
+.datePickForStartDate .ui-datepicker-calendar {
+	display: none;
+}
+
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary,
+	.ui-widget-header .ui-priority-secondary {
+	opacity: 1 !important;
+	font-weight: bold !important;
+}
+
+sup {
+	color: red;
+}
+
+.ui-datepicker-trigger {
+	height: 25px;
+	width: 24px;
+	position: absolute;
+	top: 20%;
+	right: 4%;
+}
+
+.ui-widget-header {
+	background: #a9b4ea;
+}
+
+.addBorder {
+	background-color: #d6d5d2;
+	box-shadow: 0 0 5px 1px rgb(94, 158, 214);
+}
+
+.removeBorder {
+	box-shadow: none;
+}
+
+.ui-visual-focus {
+	box-shadow: none !important;
+	color: #012970 !important;
+	font-weight: 500 !important;
+}
+
+@media ( max-width : 450px) {
+	.ui-datepicker-trigger {
+		height: 15px;
+		width: 15px;
+		position: absolute;
+		top: 3px;
+		right: 2%;
+	}
+}
+
+.success-alert-div {
+	display: none;
+	top: auto;
+	right: auto;
+}
+
+.c-pad-form {
+	padding: 0, 20% !important;
+}
+
+/* Tags Genrated by select2  */
+.select2-selection__choice {
+	display: flex;
+	padding: 2px 10px !important;
+	flex-direction: row-reverse;
+	background-color: #00425A !important;
+	border-radius: 16px !important;
+	-webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05)
+		!important;
+	-moz-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05)
+		!important;
+	box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05)
+		!important;
+	text-decoration: none !important;
+	color: white !important;
+	border: 1px solid !important;
+}
+
+.select2-selection__choice__remove {
+	margin-left: 2px !important;
+}
+
+.select2-selection__choice__remove:hover {
+	color: white !important;
+}
+
+.foo .select2-container--bootstrap .select2-selection {
+	box-shadow: inherit;
+	border: none !important;
+}
+/* to show select2 dropdown icon */
+.select2-selection--multiple:before {
+    content: "";
+    position: absolute; 
+    right: 7px;
+    top: 42%;
+    border-top: 5px solid #888;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+/* to show multiselect select2 placeholder */
+.select2-search__field:placeholder-shown{
+	width: 100% !important;
+}
+.select2-search--inline {
+    display: contents; 
+}
+
+.expertCard{
+	background-color: #f6f9ff;
+}
+
+.expertiseLevel{
+	width: 20px; 
+	height: 20px;
+}
+
+.card-title{
+	background-color: #f6f9ff;
+}
+#AddEmploymentModel{
+	display: none;
+}
+.select2-container .select2-selection--single {
+    height: 35px;
+}
+.foo .select2-selection--multiple:before {
+	content: none !important;
+	position: absolute;
+	right: 7px;
+	top: 42%;
+	border-top: 5px solid #888;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+}

@@ -5,12 +5,7 @@
 
 let CustomSelectionAdapter = $.fn.select2.amd.require("select2/selection/customSelectionAdapter");
 	
-	/* $("#employeeskill").on("change" , function(){
-		$("")
-	}) */
-
-	$(document).on("click",
-			"#employeeDOB,#educationStartDate,#educationEndDate", function() {
+$(document).on("click", "#employeeDOB,#educationStartDate,#educationEndDate", function() {
 				$(this).next().click();
 				$(this).siblings().find(".ui-datepicker-trigger").trigger()
 			})
@@ -21,6 +16,29 @@ let CustomSelectionAdapter = $.fn.select2.amd.require("select2/selection/customS
 		selectionContainer : $('.foo'),
 		theme : "bootstrap",
 	});
+
+//Employee Date of birth 
+$("#employeeDOB").datepicker({
+	dateFormat: 'dd/mm/yy',
+	maxDate: 0,
+	changeMonth: true,
+	changeYear: true,
+	showOn: "button",
+	buttonImage: "assets/img/calendar-icon.png",
+	buttonImageOnly: true,
+	buttonText: "Select date",
+});
+
+//validating date picker on change
+
+$(document).on("keyup change clear keydown", "#employeeDOB", function() {
+	$(this).valid();
+})
+
+
+$("input[type=file]").on("change" ,function(){
+	$(this).valid();
+})
 
 let personalDetails = {};
 
@@ -152,18 +170,10 @@ $("#regEmployeeForm").validate({
 	}
 })
 
-let expLvl;
-function getExpertieseLevel() {
-	$($("input:radio[name=expertiseLevel]")).each(function(index, element) {
-		console.log(element);
-		if ($(element).is(":checked")) {
-			expLvl = $(element).attr("id");
-		}
-	})
-}
 
 
 function ajaxCallOnSubmitOfPersonalDetails() {
+	saveLanguageObject();
 	genrateObjectForPersonalDetail();
 	console.log(personalDetails);
 
@@ -184,7 +194,6 @@ function ajaxCallOnSubmitOfPersonalDetails() {
 
 
 function genrateObjectForPersonalDetail() {
-	getExpertieseLevel();
 	personalDetails = {
 		"employeeFirstName": $("#employeeFirstName").val(),
 		"employeeLastName": $("#employeeLastName").val(),

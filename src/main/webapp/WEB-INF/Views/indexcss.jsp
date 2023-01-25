@@ -18,10 +18,21 @@
 <link href="assets/vendor/jquery-ui-1.13.2/jquery-ui.css" rel="stylesheet">
 <link href="assets/vendor/datatable/datatables.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/select2.min.css" />
+
 <link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/selectCustome.css"/>
 <link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/BootsrtrapThemeForSelect2.css"  />
 <link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
 
+
+<!-- managecompany page css is in below file -->
+<link rel="stylesheet" href="assets/css/manageCompany.css">
+
+
+<!-- all common css for manage company details and employee details is in below file -->
+<link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
+
+ <!-- manageEmployee page css is in below file -->
+<link rel="stylesheet" href="assets/css/employeeDetails.css">
+
 <!-- Template Main CSS File -->
 <link href="assets/css/style.css" rel="stylesheet">
-

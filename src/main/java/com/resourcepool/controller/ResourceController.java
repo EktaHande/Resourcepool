@@ -86,10 +86,7 @@ public class ResourceController {
 	@PostMapping("/submitPersonalDetails")
 	@ResponseBody
 	public String submitPersonalDetails(@RequestParam("personalDetails") String personalDetails) {
-		
 		System.out.println(personalDetails);
-		
 		return "Done";
-		
 	}
 }

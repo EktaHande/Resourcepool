@@ -126,14 +126,14 @@ $(document).ready(function() {
 		changeYear: true,
 		dateFormat: 'mm/yy',
 		maxDate: 0,
-		showOn: "button",
+		showOn: "both",
 		buttonImage: "assets/img/calendar-icon.png",
 		buttonImageOnly: true,
 		buttonText: "Select date",
-		beforeShow: function(input, inst) {
+		beforeShow: function( input, inst) {
 			inst.dpDiv.addClass('datePickForStartDate');
 		},
-		onClose: function(dateText, inst) {
+		onClose: function(input, inst) {
 			inst.dpDiv.removeClass('datePickForStartDate');
 			$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
 		},
@@ -146,14 +146,14 @@ $(document).ready(function() {
 		changeMonth: true,
 		changeYear: true,
 		dateFormat: 'mm/yy',
-		showOn: "button",
+		showOn: "both",
 		buttonImage: "assets/img/calendar-icon.png",
 		buttonImageOnly: true,
 		buttonText: "Select date",
 		beforeShow: function(input, inst) {
 			inst.dpDiv.addClass('datePickForStartDate');
 		},
-		onClose: function(dateText, inst) {
+		onClose: function(input, inst) {
 			inst.dpDiv.removeClass('datePickForStartDate');
 			$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
 		},
@@ -217,7 +217,7 @@ function addingEmployment() {
             <td>${element['StartDate']}</td>
             <td>${element['PrefferedLocation']}</td>
             <td>${element['CurrentlyWorking']}</td>]
-			<td><button class="btn btn-outline-danger delete-employment">Delete</button><button class="btn btn-outline-success">Edit</button></td>
+			<td><button class="btn btn-outline-danger delete-employment">Delete</button></td>
 		 </tr>
 		 `);
 	});

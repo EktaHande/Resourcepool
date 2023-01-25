@@ -19,6 +19,7 @@ $("textarea").on("keydown" , function(){
 })
 
 
+
 $("#educationStartDate").datepicker({
 		dateFormat: 'dd/mm/yy',
 		maxDate: 0,
@@ -148,19 +149,19 @@ $("#educationDetail").validate({
 	} ,
 	messages:{
 		schoolName : {
-			required  : "Enter the school Name",
+			required  : "Enter school name",
 		},
 		streamName : {
-			required  : "Select the stream name",
+			required  : "Please select  stream name",
 		},
 		degree : {
-			required : "Select the degree" ,
+			required : "Please select  degree" ,
 		},
 		educationStartDate : {
-			required : "Select the education start date" ,
+			required : " Please select education start date" ,
 		} ,
 		educationEndDate : {
-			required : "Select the education end date" ,
+			required : "Please select education end date" ,
 		},
 		description : {
 			maxlength : "Max length should not exceed the 100 character" ,	

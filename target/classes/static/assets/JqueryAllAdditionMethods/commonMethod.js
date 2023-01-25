@@ -5,13 +5,14 @@ W*	All Additional method
 // validation method for checking upload file size
 $.validator.addMethod("checkFileSize", function(value, element, args) {
 	return element.files[0].size < args;
-
 }, "Please select appropriate file size");
+
 
 //validate name
 $.validator.addMethod("validateName", function(value) {
 	return /^[A-Za-z' ]{3,}$/.test($.trim(value));
 }, "Enter a valid name");
+
 
 $.validator.addMethod("duplicateLanguage", function(value) {
 	let languageDetail = $(".languages");
@@ -26,13 +27,8 @@ $.validator.addMethod("duplicateLanguage", function(value) {
 	return true;
 }, "Language already exists");
 
-//validate company name
-$.validator.addMethod("validateCompanyName", function(value) {
-	if (value.trim() !== "") {
-		return /^[A-Za-z0-9' ]{3,}$/.test($.trim(value));
-	}
-	return true;
-}, "Enter Valid Details");
+
+
 
 //validate current designation value with other input value
 $.validator.addMethod("notEqual", function(value) {
@@ -49,30 +45,43 @@ $.validator.addMethod("notEqual", function(value) {
 }, "Entered value is already available in Current Designation list");
 
 
+
 //validate email
 $.validator.addMethod("validateEmail", function(value) {
-	return String(value)
-		.toLowerCase()
-		.match(
-			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-		);
-}, "Enter correct email-address");
+	if(value.trim() == ""){
+		return true;
+	}
+	return String(value).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+}, "Enter valid email-id");
 
-$.validator.addMethod("validateLanguage", function(value) {
+$.validator.addMethod("validateLanguage", function() {
 	return allLanguage.length > 0;
 }, "Please add atleast one language");
 
-
-//validate phone no 
-$.validator.addMethod("validateMobile", function(value) {
-	return /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test($.trim(value));
-}, "Enter 10 digit mobile number number must start with 7 to 9");
 
 
 //validation for date pattern 
 $.validator.addMethod("DateFormat", function(value) {
 	return /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/.test($.trim(value));
+}, "Enter valid date format");
+
+// This function is being used to validate mobile-number
+$.validator.addMethod("validateMobile", function(value) {
+	return /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test($.trim(value));
+}, "Enter valid phone number");
+
+// This function is being used to validate gstNumber
+$.validator.addMethod("gstNumberValidation", function(value) {
+	return /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/
+		.test($.trim(value));
+}, "Enter valid GST number ");
+
+//validation for date pattern 
+
+$.validator.addMethod("DateFormat", function(value) {
+	return /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/.test($.trim(value));
 }, "Enter the date in correct format");
+
 
 
 //Additional method for validating date of birth 

@@ -1,10 +1,4 @@
-$.validator.addMethod("validateEmail", function(value) {
-	return String(value)
-		.toLowerCase()
-		.match(
-			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-		);
-}, "Enter correct email-address");
+
 $("#forgotPasswordForm").validate({
 	rules: {
 		email: {
@@ -14,8 +8,8 @@ $("#forgotPasswordForm").validate({
 		},
 	},
 	messages: {
-		firstName: {
-			required: "Email is Required",
+		email: {
+			required: "Please enter email-id",
 			maxlength: "Maximum length will be 100",
 		},
 	},
@@ -44,12 +38,12 @@ $("#resetPasswordForm").validate({
 	},
 	messages: {
 		password: {
-			required: "Please enter new password",
+			required: "Please enter password",
 			minlength: "Minimum 8 character is required",
 			maxlength: "Maximum 12 character is required"
 		},
 		confirmPassword: {
-			required: "Confirm Password is required",
+			required: "Please enter  confirm password",
 			equalTo: "Password does not match",
 			minlength: "Minimum 8 character is required",
 			maxlength: "Maximum 12 character is required",

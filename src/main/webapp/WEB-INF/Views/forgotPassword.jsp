@@ -21,14 +21,14 @@
 								</div>
 								<p class="fs-6 fw-normal">Enter your Email Id and click on "Reset Password"</p>
 								<form class="row g-3" action="forgotPasswordForm" method="post" novalidate id="forgotPasswordForm" autocomplete="off">
-									<div class="col-12">
+									<div class="col-12 ">
 										<div class="input-group">
 											<span class="input-group-text" id="inputGroupPrepend">
 												<em class="ri-account-box-fill"></em>
 											</span>
-											<input type="text" name="email" class="form-control" placeholder="Enter Your Email Id">
+											<input type="text" name="email" id="email" class="form-control" placeholder="enter email-id">
 										</div>
-										<label id="yourEmail-error" class="error text-danger" for="yourEmail"></label>
+										<label id="email-error" class="error text-danger" for="email"></label>
 									</div>
 									<div class="d-flex justify-content-around">
 										<button class="btn btn-danger fw-bold w-50" type="submit">Reset Password</button>

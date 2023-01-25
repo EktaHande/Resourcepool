@@ -19,22 +19,11 @@ $.validator.addMethod("validateCompanyName", function(value) {
 	return String(value).match(/^[ A-Za-z0-9_@./#&+-]*$/);
 }, "Enter correct company name");
 
-//This function is being used to validate email for company 
-$.validator.addMethod("validateEmail", function(value) {
-	return String(value).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-}, "Enter correct email-address");
 
 // This function is being used to select industry type
 $.validator.addMethod("selectIndustryType", function(value) {
 	return value != '0';
-}, "Please select industry-Type");
-
-// This function is being used to check file size 
-$.validator.addMethod("checkFileSize", function(value, element, args) {
-	return element.files[0].size < args;
-
-}, "Please select appropriate file size");
-
+}, "Please select industry Type");
 
 // This function is being used to check space 
 $.validator.addMethod("validateSpace", function(value) {
@@ -45,13 +34,14 @@ $.validator.addMethod("validateSpace", function(value) {
 
 
 
+
+
 /* This  validation section is for Address details */
 
 // This function is being used to select country
 $.validator.addMethod("selectCountryType", function(value) {
 	return value != '0';
 }, "Please select country");
-
 
 // This function is being used to select state
 $.validator.addMethod("selectStateType", function(value) {
@@ -63,8 +53,6 @@ $.validator.addMethod("selectCityType", function(value) {
 	return value != '0';
 }, "Please select city");
 
-/* This is end of validation section Address details */
-
 // This function is being used to validate pincode
 $.validator.addMethod("validatePincode", function(value) {
 	return value.match(/^\d{6}$/);
@@ -73,49 +61,40 @@ $.validator.addMethod("validatePincode", function(value) {
 /* This is end of validation section Address details */
 
 
+
+
 /* This  validation section is for Contact details */
 
 // This function is being used to validate contact person name
 $.validator.addMethod("validatePersonName", function(value) {
-	return String(value).match(/^[ A-Za-z\s']*$/);
-}, "Enter correct contact-person name");
+	return String(value).match(/^[A-Za-z\s]*$/);
+}, "Enter correct contact person name");
 
 // This function is being used to validate designation
 $.validator.addMethod("validateDesignation", function(value) {
 	return value.match(/^[A-Za-z\s]*$/);
 }, "Enter valid designation");
 
-// This function is being used to validate mobile-number
-$.validator.addMethod("validateMobile", function(value) {
-	return /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/.test($
-		.trim(value));
-}, "Enter valid mobile number");
-
 /* This is end validation section Contact details */
 
 
-/* This  validation section is for GST details */
 
+
+/* This  validation section is for GST details */
 // This function is being used to check whether radio button is selected or not
 $.validator.addMethod("validateGST", function(value) {
 	return value != '0';
-}, "Please! select one");
-
-// This function is being used to validate gstNumber
-$.validator.addMethod("gstNumberValidation", function(value) {
-	return /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/
-		.test($.trim(value));
-}, "Enter valid GST number ");
-
+}, "Please  select one");
 /* This  is end  validation section  GST details */
 
 
-/* This  validation section is for Bank details */
 
+
+/* This  validation section is for Bank details */
 // This validation is for account holder name
 $.validator.addMethod("accountHolderName", function(value) {
-	return String(value).match(/^[ A-Za-z\s']*$/);
-}, "Enter valid account-holder name");
+	return String(value).match(/^[A-Za-z\s']*$/);
+}, "Enter valid account holder name");
 
 // This validation is of account type
 $.validator.addMethod("validateAccountType", function(value) {
@@ -136,14 +115,10 @@ $.validator.addMethod("ifscCode", function(value) {
 $.validator.addMethod("validateBranchName", function(value) {
 	return value != '0';
 }, "Please select branch");
-
 /* This is end validation section  Bank details */
 
-$("#manageCompanyDetails")
-	.validate(
-		{
-			rules: {
-
+$("#manageCompanyDetails").validate({
+	rules: {
 				companyName: {
 					required: true,
 					validateSpace: true,
@@ -250,13 +225,13 @@ $("#manageCompanyDetails")
 				},
 
 				companyEmail: {
-					required: "Please enter company email-address"
+					required: "Please enter company email-id"
 				},
 				companyPassword: {
 					required: "Please enter company password"
 				},
 				industry: {
-					selectIndustryType: "Please select at least one industry-type"
+					selectIndustryType: "Please select industry type"
 				},
 				imageUpload: {
 					required: "Please select file"
@@ -283,7 +258,7 @@ $("#manageCompanyDetails")
 					required: "Please enter account number"
 				},
 				ifscCode: {
-					required: "Please enter ifsc code"
+					required: "Please enter IFSC code"
 				},
 				uploadDocuments: {
 					required: "Please select file"
@@ -291,49 +266,36 @@ $("#manageCompanyDetails")
 
 			}
 		})
+		
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//Ajax
-
-	let object = {};
+	 let manage = {};
 	function createObject(){
 		address();
 		contact();
 		bankObject();
 		allcompany();
-		object['addressDetails']   = addressObject;
-		object['contactDetails']   = contactObject;
-		object['bankDetails']   = bankDetails;
-		object['allDocumentsDetails']   = allcompanyDocuments;
+		manage['addressDetails']   = addressObject;
+		manage['contactDetails']   = contactObject;
+		manage['bankDetails']   = bankDetails;
+		manage['allDocumentsDetails']   = allcompanyDocuments;
 	    let allElement = $(".companyDetails").find('input');
 		$.each(allElement, function() {
-			object[$(this).attr('name')] = $(this).val();
+			manage[$(this).attr('name')] = $(this).val();
 		});
 		let selectElement = $(".companyDetails").find('select');
 		$.each(selectElement, function() {
-			object[$(this).attr('name')] = $(this).val();
+			manage[$(this).attr('name')] = $(this).val();
 		});
 		
 	    let allGstDetails = $(".gstNumber").find('input');
        	$.each(allGstDetails, function() {
 			if($(this).attr("type") == "radio"){
 				if($(this).is(":checked")){
-				object[$(this).attr('name')] = $(this).val();	
+				manage[$(this).attr('name')] = $(this).val();	
 				}
 			}else{
-				object[$(this).attr('name')] = $(this).val();
+				manage[$(this).attr('name')] = $(this).val();
 			}
 			
 		});
@@ -341,10 +303,10 @@ $("#manageCompanyDetails")
 		return true;
 	}
 	
-	let addressObject = {};
 	
+	
+		let addressObject = {};
 	function address(){
-		
 		let addressDetailsInput = $(".addressDetails").find('input');
 		$.each(addressDetailsInput, function(){
 			addressObject[$(this).attr('name')] = $(this).val();
@@ -356,8 +318,9 @@ $("#manageCompanyDetails")
 		
 	}
 	
-	let contactObject = {};
+	   let contactObject = {};
 	function contact(){
+
 		let contactDetailsInput = $(".contactDetails").find('input');
 		$.each(contactDetailsInput, function(){
 			contactObject[$(this).attr('name')] = $(this).val();
@@ -369,9 +332,9 @@ $("#manageCompanyDetails")
 		
 	}
 
-	  let bankDetails = {};
+	
+	    let bankDetails = {};	
 	  function bankObject(){
-		
 		let bankDetailsInput = $(".bankDetails").find('input');
 		$.each(bankDetailsInput, function(){
 			bankDetails[$(this).attr('name')] = $(this).val();
@@ -381,10 +344,9 @@ $("#manageCompanyDetails")
 			bankDetails[$(this).attr('name')] = $(this).val();
 		});
 	}
-	
-	
-	
-	  let allcompanyDocuments = {};
+
+	 
+		let allcompanyDocuments = {};
 	  function allcompany(){
 		let uploadDocuments = $(".uploadDocuments").find('input');
 		$.each(uploadDocuments, function(){
@@ -396,10 +358,11 @@ $("#manageCompanyDetails")
 	function ajaxCall(){
 		createObject();
 		$.ajax({
+			
 			url : "ObjectData",
 			type: "POST",
 			data : {
-				"obj" : JSON.stringify(object)
+				"obj" : JSON.stringify(manage)
 			},
          success: function (response) {
            console.log(JSON.parse(response))
@@ -414,5 +377,7 @@ $("#manageCompanyDetails")
 		})	
 	}
 
+
+    
 
 

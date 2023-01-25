@@ -2,7 +2,6 @@
 // 8 for backspace 
 // 48-57 for 0-9 numbers
 
-$('b[role="presentation"]').hide();
 
 $(document).on("keypress", ".no-e", function(evt) {
 	if (evt.which != 8 && evt.which != 0 && evt.which < 48 || evt.which > 57) {
@@ -11,7 +10,6 @@ $(document).on("keypress", ".no-e", function(evt) {
 })
 
 
-/*Datepicker for Employee Date of birth  */
 let currentTab = 0;
 showTab(currentTab);
 
@@ -38,9 +36,11 @@ function nextPrev(n) {
 	if (n == 1 && !validateForm())
 		return false;
 	$(x[currentTab]).hide();
-	if (currentTab == x.length - 1) {
-		if ($("#manageCompanyDetails").length) {
-			if ($("#manageCompanyDetails").valid()) {
+	
+
+	if (currentTab == x.length - 1 && n==1) {
+		if($("#manageCompanyDetails").length){
+			if($("#manageCompanyDetails").valid()){
 				ajaxCall();
 			}
 		} else if ($("#regEmployeeForm").length) {
@@ -54,13 +54,6 @@ function nextPrev(n) {
 	showTab(currentTab);
 }
 
-function prev(n) {
-	let x = $(".tab");
-	$(x[currentTab]).hide();
-	currentTab = currentTab + n;
-	showTab(currentTab);
-
-}
 
 function validateForm() {
 	let x, i, valid = true;
@@ -112,32 +105,6 @@ function fixStepIndicator(n) {
 	$(x[n]).addClass(" active");
 	$(x[n]).parent().addClass("wizard-step-highlight")
 }
-
-
-
-//Employee Date of birth 
-$("#employeeDOB").datepicker({
-	dateFormat: 'dd/mm/yy',
-	maxDate: 0,
-	changeMonth: true,
-	changeYear: true,
-	showOn: "button",
-	buttonImage: "assets/img/calendar-icon.png",
-	buttonImageOnly: true,
-	buttonText: "Select date",
-});
-
-//validating date picker on change
-
-$(document).on("keyup change clear keydown", "#employeeDOB", function() {
-	$(this).valid();
-})
-
-
-
-$("input[type=file]").on("change", function() {
-	$(this).valid();
-})
 
 
 
