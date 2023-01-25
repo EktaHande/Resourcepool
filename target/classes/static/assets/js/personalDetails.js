@@ -1,6 +1,26 @@
 /**
  * Personal Detail
  */
+ 
+
+let CustomSelectionAdapter = $.fn.select2.amd.require("select2/selection/customSelectionAdapter");
+	
+	/* $("#employeeskill").on("change" , function(){
+		$("")
+	}) */
+
+	$(document).on("click",
+			"#employeeDOB,#educationStartDate,#educationEndDate", function() {
+				$(this).next().click();
+				$(this).siblings().find(".ui-datepicker-trigger").trigger()
+			})
+
+	$("#employeeskill").select2({
+		placeholder : "Add Skills",
+		selectionAdapter : CustomSelectionAdapter,
+		selectionContainer : $('.foo'),
+		theme : "bootstrap",
+	});
 
 let personalDetails = {};
 
@@ -74,52 +94,52 @@ $("#regEmployeeForm").validate({
 	},
 	messages: {
 		employeeFirstName: {
-			required: "Please enter the employee first name",
-			validateName: "Please enter the first name in correct format"
+			required: "Please enter first name",
+			validateName: "Please enter valid first name"
 		},
 		employeeLastName: {
-			required: "Please enter the last name of the employee ",
+			required: "Please enter last name ",
 			maxlength: "The length of the last name should not exceed the 45 chars",
 			minlength: "The length of the first name should not be less than 2 chars",
-			validateName: "Please enter the last name in correct format",
+			validateName: "Please enter valid last name",
 		},
 		employeeEmail: {
-			required: "Please enter the employee email",
+			required: "Please enter email-id",
 			maxlength: "Length of the email should not exceed the 45 chars",
 			minlength: "Length of the email should not be less than 2 chars",
-			validateEmail: "Enter the valid email"
+			validateEmail: "Enter valid email"
 		},
 		employeeDOB: {
-			required: "Please enter the employee date of birth",
+			required: "Please enter date of birth",
 			validateDate: "Date should not be less than current date",
-			DateFormat: "Please enter the date in correct format",
+			DateFormat: "Please enter  date in correct format",
 		},
 		employeeMobile: {
-			required: "Please enter the mobile no ",
-			validateMobile: "Enter the mobile no in correct format",
+			required: "Please enter  mobile number ",
+			validateMobile: "Enter the mobile number in correct format",
 			maxlength: "Length of the no should not exceed the 13 digits",
-			minlength: "Length of the phone no should  not be less than 10 digits",
+			minlength: "Length of the phone number should  not be less than 10 digits",
 			digits: "Do not enter letter in this field"
 		},
 		employeeHourRate: {
-			required: "Please enter the employee hourly rate",
+			required: "Please enter hourly rate",
 			number: "Please do not enter letters",
 			min: "Please do not enter negative value",
 		},
 		serviceFee: {
-			required: "Please enter the service Fee of the company ",
+			required: "Please enter service Fee ",
 			number: "Please do not enter letters",
 			min: "Please do not enter negative value",
 		},
 		resumeTitle: {
-			required: "Please enter the resume title",
+			required: "Please enter resume title",
 			validateName: "Enter the valid title",
 		},
 		employeeskill: {
 			required: "Please select atleast one skill",
 		},
 		employeeResume: {
-			required: "Please upload the resume ",
+			required: "Please upload  resume ",
 			extension: "Select pdf file only in for resume",
 			checkFileSize: "File Size should not exceed the limit of 2 mb ",
 		},
@@ -152,7 +172,6 @@ function ajaxCallOnSubmitOfPersonalDetails() {
 		url: "submitPersonalDetails",
 		data: {"personalDetails" :JSON.stringify(personalDetails) },
 		success: function(response) {
-			//success-aler-div
 			$("#success").show();
 			console.log(response)
 			setTimeout(function() {
@@ -174,8 +193,8 @@ function genrateObjectForPersonalDetail() {
 		"employeeMobile": $("#employeeMobile").val(),
 		"employmentDetails": employeeDetail,
 		"employeeEducationDetails": allEducationDetails,
-		"employeeExpertiesLevel": expLvl,
-		"employeeLanguages": allLanguage,
+		"employeeExpertiesLevel": expertiseLevel,
+		"employeeLanguages": languageObject,
 		"employeeHourRateDetails": {
 			"employeeHourRate": $("#employeeHourRate").val(),
 			"serviceFee": $("#serviceFee").val(),

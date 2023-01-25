@@ -14,7 +14,9 @@
 		<li class="nav-item"><a class="nav-link " href="manageEmployee">
 				<em class="bi bi-person me-3"></em> <span>Manage Employee</span>
 		</a></li>
-
+		<li class="nav-item"><a class="nav-link " href="postJob">
+				<em class="bi bi-bag me-3"></em> <span>Post Job</span>
+		</a></li>
 
 
 		<!-- End Dashboard Nav -->

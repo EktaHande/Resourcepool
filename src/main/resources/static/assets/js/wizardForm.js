@@ -134,6 +134,7 @@ $(document).on("keyup change clear keydown", "#employeeDOB", function() {
 })
 
 
+
 $("input[type=file]").on("change", function() {
 	$(this).valid();
 })

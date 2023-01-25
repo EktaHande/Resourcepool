@@ -16,9 +16,10 @@
 <script src="assets/vendor/jquery-ui-1.13.2/jquery-ui.js"></script>
 <script src="assets/vendor/datatable/datatables.min.js"></script>
 <script src="assets/vendor/select2-4.0.13/dist/js/select2.full.min.js"></script>
-<script src="assets/JqueryAllAdditionMethods/additionalMethod.js"></script>
-<script src="assets/js/manageCompanyDetails.js"></script>
 <script src="assets/vendor/select2-4.0.13/dist/js/selectCustome.js"></script>
+<script src="assets/JqueryAllAdditionMethods/additionalMethod.js"></script>
+<script src="assets/js/postJob.js"></script>
+<script src="assets/js/manageCompanyDetails.js"></script>
 <script src="assets/js/educationDetails.js"></script>
 <script src="assets/js/personalDetails.js"></script>
 <script src="assets/js/employeeDetails.js"></script>

@@ -530,26 +530,8 @@
 		</div>
 	</div>
 	<div class="alert alert-success col-3" role="alert" id="success">Employee details has been added successfully!</div>
-
 </main>
 <%@include file="commonEnd.jsp"%>
 
-<script>
-	let CustomSelectionAdapter = $.fn.select2.amd
-			.require("select2/selection/customSelectionAdapter");
-
-	$(document).on("click",
-			"#employeeDOB,#educationStartDate,#educationEndDate", function() {
-				$(this).next().click();
-				$(this).siblings().find(".ui-datepicker-trigger").trigger()
-			})
-
-	$("#employeeskill").select2({
-		placeholder : "Add Skills",
-		selectionAdapter : CustomSelectionAdapter,
-		selectionContainer : $('.foo'),
-		theme : "bootstrap",
-	});
-</script>
 
 

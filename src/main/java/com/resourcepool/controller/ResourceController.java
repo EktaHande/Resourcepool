@@ -67,6 +67,11 @@ public class ResourceController {
 	public String registration() {
 		return "Registration";
 	}
+	
+	@GetMapping("/postJob")
+	public String postJob() {
+		return "postJob" ;
+	}
 
 
 	@PostMapping("/ObjectData")
