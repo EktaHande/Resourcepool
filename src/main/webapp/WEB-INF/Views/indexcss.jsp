@@ -22,8 +22,6 @@
 <link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/selectCustome.css"/>
 <link rel="stylesheet" href="assets/vendor/select2-4.0.13/dist/css/BootsrtrapThemeForSelect2.css"  />
 <link rel="stylesheet" href="assets/css/wizardform.css" media="all" />
-
-
 <!-- managecompany page css is in below file -->
 <link rel="stylesheet" href="assets/css/manageCompany.css">
 

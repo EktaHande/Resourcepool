@@ -19,11 +19,13 @@
 <script src="assets/vendor/select2-4.0.13/dist/js/selectCustome.js"></script>
 <script src="assets/JqueryAllAdditionMethods/additionalMethod.js"></script>
 <script src="assets/js/postJob.js"></script>
+
 <script src="assets/js/manageCompanyDetails.js"></script>
 <script src="assets/js/educationDetails.js"></script>
 <script src="assets/js/personalDetails.js"></script>
 <script src="assets/js/employeeDetails.js"></script>
 <script src="assets/js/forgotPassword.js"></script>
+<script src="assets/js/postjobwizard.js"></script>
 <script src="assets/js/wizardForm.js"></script>
 <script src="assets/js/validation.js"></script>
 <script src="assets/js/manageCompanyDetails.js"></script>

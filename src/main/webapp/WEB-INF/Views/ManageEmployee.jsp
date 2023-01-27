@@ -584,7 +584,7 @@
 									<div class="row  mb-3">
 										<div class="col-12 col-md-6 d-flex flex-wrap">
 											<label for="schoolName" class="col-12 col-md-4">School
-												Name</label>
+												Name<sup>*</sup></label>
 											<div class="col-12 col-md-8">
 												<input type="text" name="schoolName" id="schoolName"
 													class="form-control" placeholder="School Name" /> <label
@@ -592,7 +592,7 @@
 											</div>
 										</div>
 										<div class="col-12 col-md-6 d-flex flex-wrap">
-											<label for="streamName" class="col-12 col-md-4">Stream</label>
+											<label for="streamName" class="col-12 col-md-4">Stream<sup>*</sup></label>
 											<div class="col-12 col-md-8">
 												<div class="">
 													<select class="form-select" name="streamName"
@@ -609,7 +609,7 @@
 									</div>
 									<div class="row mb-3">
 										<div class="col-12 col-md-6 d-flex flex-wrap">
-											<label for="degree" class="col-12 col-md-4">Degree</label>
+											<label for="degree" class="col-12 col-md-4">Degree<sup>*</sup></label>
 											<div class="col-12 col-md-8">
 												<div class="col-12">
 													<select class="form-select" name="degree" id="degree">
@@ -626,7 +626,7 @@
 									<div class="row mb-3">
 										<div class="d-flex flex-wrap col-12 col-md-6 mb-3 ">
 											<label for="educationStartDate"
-												class="col-12 col-md-4 my-auto">Start Date</label>
+												class="col-12 col-md-4 my-auto">Start Date<sup>*</sup></label>
 											<div
 												class="col-12 col-md-8 d-flex flex-wrap  position-relative">
 												<input type="text" name="educationStartDate"
@@ -638,7 +638,7 @@
 										</div>
 										<div class="col-12 col-md-6 mb-3 d-flex flex-wrap">
 											<label for="educationEndDate" class="col-12 col-md-4 my-auto">End
-												Date</label>
+												Date<sup>*</sup></label>
 											<div
 												class="col-12 col-md-8 d-flex flex-wrap  position-relative">
 												<input type="text" name="educationEndDate"

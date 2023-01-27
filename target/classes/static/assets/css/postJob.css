@@ -3,3 +3,38 @@
 .headline-confirm{
 	visibility: hidden; 
 }
+
+.heading-title{
+	color:rgb(11, 84, 11); 
+}
+
+
+/* 
+.post-job-skill .select2-selection__arrow {
+  display: none !important;
+} */
+
+#postjobSkill{
+	appearance: none !important;
+}
+
+.tags{
+	background-color: #ccf7c03b;
+	color: green ;
+	margin: 2px ;
+	cursor: pointer;
+}
+
+.tags:hover{
+	color: black ;
+}
+/* Hide the dropdown icon for post tab skill */
+.post-job-skill .select2-selection--multiple:before {
+    content: none !important;
+    position: absolute; 
+    right: 7px;
+    top: 42%;
+    border-top: 5px solid #888;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
