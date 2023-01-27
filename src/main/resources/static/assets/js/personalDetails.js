@@ -180,18 +180,19 @@ function ajaxCallOnSubmitOfPersonalDetails() {
 	$.ajax({
 		type: "post",
 		url: "submitPersonalDetails",
-		data: {"personalDetails" :JSON.stringify(personalDetails) },
+		data: { "personalDetails": JSON.stringify(personalDetails) },
 		success: function(response) {
 			$("#success").show();
 			console.log(response)
 			setTimeout(function() {
-				window.location.href = "manageEmployee";
+				window.location.href = "employeeHome";
 				$("#success").hide();
 			}, 3000);
 		}
 	});
 }
 
+const employeeData = localStorage.getItem("employee") ? JSON.parse(localStorage.getItem("employee")) : []
 
 function genrateObjectForPersonalDetail() {
 	personalDetails = {
@@ -215,6 +216,9 @@ function genrateObjectForPersonalDetail() {
 			"employeeResume": $("#employeeResume").val(),
 		}
 	}
+
+	employeeData.push(personalDetails);
+	localStorage.setItem('employee', JSON.stringify(employeeData));
 }
 
 

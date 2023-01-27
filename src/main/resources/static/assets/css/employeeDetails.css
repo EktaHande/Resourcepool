@@ -1,7 +1,3 @@
-/*Datepicker css */
-.datePickForStartDate .ui-datepicker-calendar {
-	display: none;
-}
 
 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary,
 	.ui-widget-header .ui-priority-secondary {
@@ -19,10 +15,6 @@ sup {
 	position: absolute;
 	top: 20%;
 	right: 4%;
-}
-
-.ui-widget-header {
-	background: #a9b4ea;
 }
 
 .addBorder {
@@ -135,4 +127,14 @@ sup {
 	border-top: 5px solid #888;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
+}
+
+#employeeDetail th, #employeeDetail td {
+	padding: 10px !important;
+}
+#employeeDetail{
+	width: 100% !important;
+}
+.employeeTable .ui-widget-header{
+ background-color: #ebeded;
 }

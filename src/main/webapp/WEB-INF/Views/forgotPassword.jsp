@@ -17,22 +17,20 @@
 						<div class="card mb-3">
 							<div class="card-body ">
 								<div class="pt-4 pb-2">
-									<h5 class="text-warning fw-bolder text-center pb-0 fs-2">Forget Your Password?</h5>
+									<h5 class="text-dark fw-bolder text-center pb-0 fs-2">Forget Your Password?</h5>
 								</div>
-								<p class="fs-6 fw-normal">Enter your Email Id and click on "Reset Password"</p>
+								<p class="fs-6 fw-normal text-center">Enter your Email Id and click on "Reset Password"</p>
 								<form class="row g-3" action="forgotPasswordForm" method="post" novalidate id="forgotPasswordForm" autocomplete="off">
 									<div class="col-12 ">
 										<div class="input-group">
-											<span class="input-group-text" id="inputGroupPrepend">
-												<em class="ri-account-box-fill"></em>
-											</span>
-											<input type="text" name="email" id="email" class="form-control" placeholder="enter email-id">
+											<span class="input-group-text" id="inputGroupPrepend"> <em class="ri-account-box-fill"></em>
+											</span> <input type="text" name="email" id="email" class="form-control" placeholder="enter email-id"> 
 										</div>
 										<label id="email-error" class="error text-danger" for="email"></label>
 									</div>
 									<div class="d-flex justify-content-around">
 										<button class="btn btn-danger fw-bold w-50" type="submit">Reset Password</button>
-										<a class="btn btn-secondary fw-bold w-25" href="backToLogin">Back</a>
+										<a class="btn btn-success fw-bold w-25" href="backToLogin">Back</a>
 									</div>
 								</form>
 							</div>

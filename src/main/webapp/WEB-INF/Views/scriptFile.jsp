@@ -15,6 +15,10 @@
 <script src="assets/vendor/jquery/additional-methods.min.js"></script>
 <script src="assets/vendor/jquery-ui-1.13.2/jquery-ui.js"></script>
 <script src="assets/vendor/datatable/datatables.min.js"></script>
+
+<!-- Jquery Datatable -->
+<script src="assets/vendor/datatable/dataTables.jqueryui.min.js"></script>
+
 <script src="assets/vendor/select2-4.0.13/dist/js/select2.full.min.js"></script>
 <script src="assets/vendor/select2-4.0.13/dist/js/selectCustome.js"></script>
 <script src="assets/JqueryAllAdditionMethods/additionalMethod.js"></script>
@@ -29,7 +33,8 @@
 <script src="assets/js/wizardForm.js"></script>
 <script src="assets/js/validation.js"></script>
 <script src="assets/js/manageCompanyDetails.js"></script>
-<script src="assets/JqueryAllAdditionMethods/commonMethod.js" ></script>
+<script src="assets/JqueryAllAdditionMethods/commonMethod.js"></script>
+<script src="assets/js/employeeHome.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
