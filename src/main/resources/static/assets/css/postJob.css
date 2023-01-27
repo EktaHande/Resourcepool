@@ -19,8 +19,8 @@
 }
 
 .tags{
-	background-color: #ccf7c03b;
-	color: green ;
+	background-color:rgba(226,237,228,255);
+	color: rgba(104,158,146,255) ;
 	margin: 2px ;
 	cursor: pointer;
 }
@@ -38,3 +38,44 @@
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
 }
+
+
+
+.skill-container{
+	background-color:rgba(0,34,1,255); 
+	color: white; 
+	padding : 5px 7px ;
+	font-weight: normal;
+}
+
+.skill-container:hover{
+	border : 1px solid ;
+	background-color:white; 
+	color: black; 
+	font-weight: normal !important;
+}
+
+
+.remove-tag:hover{
+	cursor : pointer ;
+	color: black;
+}
+
+.search-container{
+	position: relative; 
+}
+
+.skill-search{
+	position: absolute; 
+    top: 13%;
+    left: 2%;
+}
+
+.bx-minus{
+	display: none;
+}
+
+
+
+
+
