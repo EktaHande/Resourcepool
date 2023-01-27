@@ -92,7 +92,7 @@ function generateTableForEducationDetails(){
 			<td>${valueOfElement["degree"]}</td>
 			<td>${valueOfElement["educationStartDate"]}</td>
 			<td>${valueOfElement["educationEndDate"]}</td>
-			<td><button class="btn btn-outline-danger delete-edu">delete</button><button class="btn btn-outline-success ms-2">Edit</button></td>
+			<td><button class="btn btn-outline-danger delete-edu">delete</button></td>
 		 </tr>
 		 `);
 	});

@@ -13,8 +13,8 @@
 								<div class="card-body ">
 
 									<div class="pt-4 pb-2">
-										<h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-										<p class="text-center small">Enter your Email and Password to login</p>
+										<h5 class="card-title p-0 text-center pb-0 fs-4">Login to Your Account</h5>
+										<p class="text-center">Enter your Email and Password to login</p>
 									</div>
 
 									<form class="row g-3" action="login" method="post" novalidate>

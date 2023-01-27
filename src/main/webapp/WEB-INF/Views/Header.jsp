@@ -41,7 +41,7 @@
 				
 					<li><hr class="dropdown-divider"></li>
 					<li><a class="dropdown-item d-flex align-items-center"
-						href="#"> <em class="bi bi-box-arrow-right"></em> <span>&nbspSign
+						href="backToLogin"> <em class="bi bi-box-arrow-right"></em> <span>&nbspSign
 								Out</span>
 					</a></li>
 				</ul></li>

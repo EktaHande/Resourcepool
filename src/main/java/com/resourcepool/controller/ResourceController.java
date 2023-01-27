@@ -57,7 +57,12 @@ public class ResourceController {
 		return "ManageEmployee";
 
 	}
-
+	
+	@GetMapping("employeeHome")
+	public String employeeHome() {
+		return "employeeDetailHome";
+	}
+	
 	@GetMapping("manageCompanyDetails")
 	public String manageCompanyDetails() {
 		return "manageCompanyDetails";
@@ -73,7 +78,6 @@ public class ResourceController {
 		return "postJob" ;
 	}
 
-
 	@PostMapping("/ObjectData")
 	@ResponseBody
 	public String getData(HttpServletRequest request) {
@@ -81,7 +85,6 @@ public class ResourceController {
 		JSONObject obj = new JSONObject(request.getParameter("obj"));
 		return obj.toString();
 	}
-
 
 	@PostMapping("/submitPersonalDetails")
 	@ResponseBody

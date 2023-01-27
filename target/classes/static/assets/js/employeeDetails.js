@@ -121,45 +121,49 @@ $("#currentLocation, #industryType, #currentDesignation").select2({
 
 $(document).ready(function() {
 
-	$('#startDate').datepicker({
+	$("#startDate").datepicker({
+		dateFormat: "mm/yy",
 		changeMonth: true,
 		changeYear: true,
-		dateFormat: 'mm/yy',
+		showButtonPanel: true,
+		showOn: "both",
 		maxDate: 0,
-		showOn: "both",
 		buttonImage: "assets/img/calendar-icon.png",
 		buttonImageOnly: true,
 		buttonText: "Select date",
-		beforeShow: function( input, inst) {
-			inst.dpDiv.addClass('datePickForStartDate');
+		currentText: "This Month",
+		onChangeMonthYear: function(year, month) {
+			$(this).val($.datepicker.formatDate('mm/yy', new Date(year, month - 1, 1)));
 		},
-		onClose: function(input, inst) {
-			inst.dpDiv.removeClass('datePickForStartDate');
-			$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
-		},
-		showButtonPanel: true,
-	});
-	$('#startDate, #endDate').click(function() {
-		$(this).parent().find(".ui-datepicker-trigger").click();
-	});
-	$('#endDate').datepicker({
+		onClose: function() {
+			let month = $(".ui-datepicker-month :selected").val();
+			let year = $(".ui-datepicker-year :selected").val();
+			$(this).val($.datepicker.formatDate('mm/yy', new Date(year, month, 1)));
+		}
+	}).focus(function() {
+		$(".ui-datepicker-calendar").hide();
+	})
+	$("#endDate").datepicker({
+		dateFormat: "mm/yy",
 		changeMonth: true,
 		changeYear: true,
-		dateFormat: 'mm/yy',
+		showButtonPanel: true,
 		showOn: "both",
 		buttonImage: "assets/img/calendar-icon.png",
 		buttonImageOnly: true,
 		buttonText: "Select date",
-		beforeShow: function(input, inst) {
-			inst.dpDiv.addClass('datePickForStartDate');
+		currentText: "This Month",
+		onChangeMonthYear: function(year, month) {
+			$(this).val($.datepicker.formatDate('mm/yy', new Date(year, month - 1, 1)));
 		},
-		onClose: function(input, inst) {
-			inst.dpDiv.removeClass('datePickForStartDate');
-			$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
-		},
-		showButtonPanel: true,
-	});
-
+		onClose: function() {
+			let month = $(".ui-datepicker-month :selected").val();
+			let year = $(".ui-datepicker-year :selected").val();
+			$(this).val($.datepicker.formatDate('mm/yy', new Date(year, month, 1)));
+		}
+	}).focus(function() {
+		$(".ui-datepicker-calendar").hide();
+	})
 	$(document).on("click", ".saveEmployeeDetails", function() {
 		let currentlyWorking = "No";
 		if ($('#currentlyWorking').is(':checked')) {
@@ -256,7 +260,7 @@ $("#addEmployeeDetailForm").validate({
 		},
 		totalWorkExperiance: {
 			required: true,
-			validateCompanyName: true,
+			number:true,
 		},
 		currentDesignation: {
 			required: true,
@@ -297,6 +301,7 @@ $("#addEmployeeDetailForm").validate({
 		},
 		totalWorkExperiance: {
 			required: "Total work experience is required",
+			number:"Enter number only",
 		},
 		other: {
 			maxlength: "Maximum 45 character is allowed",
