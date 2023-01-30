@@ -18,12 +18,10 @@
 
 <!-- Jquery Datatable -->
 <script src="assets/vendor/datatable/dataTables.jqueryui.min.js"></script>
-
 <script src="assets/vendor/select2-4.0.13/dist/js/select2.full.min.js"></script>
 <script src="assets/vendor/select2-4.0.13/dist/js/selectCustome.js"></script>
 <script src="assets/JqueryAllAdditionMethods/additionalMethod.js"></script>
 <script src="assets/js/postJob.js"></script>
-
 <script src="assets/js/manageCompanyDetails.js"></script>
 <script src="assets/js/educationDetails.js"></script>
 <script src="assets/js/personalDetails.js"></script>
@@ -35,7 +33,8 @@
 <script src="assets/js/manageCompanyDetails.js"></script>
 <script src="assets/JqueryAllAdditionMethods/commonMethod.js"></script>
 <script src="assets/js/employeeHome.js"></script>
-
+<script src="assets/JqueryAllAdditionMethods/commonMethod.js" ></script>
+<script src="assets/js/sideBar.js" ></script>
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 

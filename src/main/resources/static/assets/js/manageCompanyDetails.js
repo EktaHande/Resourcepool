@@ -1,9 +1,9 @@
 
+
 $(".gstDiv").hide();
 $("input[name = flexRadioDefault]:radio").on("change", function() {
 
 	if ($(this).val() == "yes") {
-
 		$(".gstDiv").show();
 	} else {
 		$(".gstDiv").hide();
@@ -267,6 +267,8 @@ $("#manageCompanyDetails").validate({
 			}
 		})
 		
+
+
 
 
 	 let manage = {};

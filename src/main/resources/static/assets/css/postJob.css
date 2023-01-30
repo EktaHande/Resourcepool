@@ -25,6 +25,19 @@
 	cursor: pointer;
 }
 
+.postJobDiv{
+margin-top: 50px;
+}
+
+
+/*.smallSection{
+	visibility: visible;
+}
+
+.mediumSection .largeSection{
+	visibility: hidden;
+}*/
+
 .tags:hover{
 	color: black ;
 }
